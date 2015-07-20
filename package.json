@@ -1,0 +1,25 @@
+{
+  "name": "eslint-config-finn",
+  "version": "0.0.0",
+  "description": "ESLint config for @Finn-no",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint -c ./eslintrc.json . && node test/config-test.js",
+    "prepublish": "npm prune && npm test"
+  },
+  "keywords": [
+    "coding-standard",
+    "standards",
+    "eslint",
+    "eslintconfig",
+    "lint",
+    "style"
+  ],
+  "repository": "finn-no/eslint-config-finn",
+  "bugs": {
+    "url": "https://github.com/finn-no/eslint-config-finn/issues"
+  },
+  "devDependencies": {
+    "eslint": "^1.0.0-rc-1"
+  }
+}
