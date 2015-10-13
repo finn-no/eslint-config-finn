@@ -4,7 +4,7 @@
   "description": "ESLint config for @Finn-no",
   "main": "index.js",
   "scripts": {
-    "test": "eslint -c ./eslintrc.json . && node test/config-test.js",
+    "test": "eslint -c ./eslintrc.js . && node test/config-test.js",
     "prepublish": "npm prune && npm test"
   },
   "keywords": [
