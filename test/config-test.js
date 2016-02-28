@@ -1,8 +1,9 @@
 'use strict';
 
 var assert = require('assert');
-var config = require('../');
+var config = require('../index.js');
+
+const ERR = 2;
 
 // Ensure that the config has some expected values
-assert.equal(config.env.node, true);
-assert.equal(config.rules.radix, 2);
+assert.equal(config.rules.curly, ERR);
