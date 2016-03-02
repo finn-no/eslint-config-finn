@@ -38,7 +38,6 @@ module.exports = {
         "no-labels": ERR,
         "no-lone-blocks": ERR,
         "no-loop-func": ERR,
-        "no-magic-numbers": ERR,
         "no-native-reassign": ERR,
         "no-new-func": ERR,
         "no-new-wrappers": ERR,
