@@ -4,6 +4,7 @@
   "description": "ESLint config for FINN.no",
   "main": "index.js",
   "scripts": {
+    "docs": "node bin/generate-rule-docs.js index.js > rules.md",
     "test": "eslint -c ./index.js --env node . && node test/config-test.js",
     "prepublish": "npm prune && npm test"
   },
@@ -20,6 +21,9 @@
     "url": "https://github.com/finn-no/eslint-config-finn/issues"
   },
   "devDependencies": {
-    "eslint": ">=2.0.0"
-  }
+    "async": "^1.5.2",
+    "eslint": ">=2.0.0",
+    "marked": "^0.3.5"
+  },
+  "dependencies": {}
 }
