@@ -65,7 +65,7 @@ module.exports = {
         "comma-style": ERR,
         "computed-property-spacing": ERR,
         "func-style": [ERR, "declaration"],
-        "indent": ERR,
+        "indent": [ERR, 4, { SwitchCase: 1 }],
         "key-spacing": [ERR, { beforeColon: false, afterColon: true, mode: "minimum" }], //enforce spacing between keys and values in object literal properties
         "max-depth": ERR, //specify the maximum depth that blocks can be nested
         "max-len": [ERR, MAX_LINE_LENGTH, TAB_WIDTH, { ignoreComments: true, ignoreUrls: true }], //specify the maximum length of a line in your program
