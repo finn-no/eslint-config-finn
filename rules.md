@@ -1,136 +1,100 @@
 # Rules
 
+* [Verify calls of `super()` in constructors (constructor-super)](http://eslint.org/docs/rules/constructor-super) (Error)
+* [Disallow use of `this`/`super` before calling `super()` in constructors. (no-this-before-super)](http://eslint.org/docs/rules/no-this-before-super) (Error)
+* [require `let` or `const` instead of `var` (no-var)](http://eslint.org/docs/rules/no-var) (Error)
+* [Require Object Literal Shorthand Syntax (object-shorthand)](http://eslint.org/docs/rules/object-shorthand) (Warning)
+* [Strict Mode Directives (strict)](http://eslint.org/docs/rules/strict) (Error)
+  * safe
+* [Avoid unexpected multiline expressions (no-unexpected-multiline)](http://eslint.org/docs/rules/no-unexpected-multiline) (Warning)
+* [Enforces getter/setter pairs in objects (accessor-pairs)](http://eslint.org/docs/rules/accessor-pairs) (Error)
+* [Treat var as Block Scoped (block-scoped-var)](http://eslint.org/docs/rules/block-scoped-var) (Error)
+* [Require Following Curly Brace Conventions (curly)](http://eslint.org/docs/rules/curly) (Error)
+* [Require Dot Notation (dot-notation)](http://eslint.org/docs/rules/dot-notation) (Error)
+* [Require === and !== (eqeqeq)](http://eslint.org/docs/rules/eqeqeq) (Error)
+* [Require Guarding for-in (guard-for-in)](http://eslint.org/docs/rules/guard-for-in) (Error)
+* [Enforce spacing before and after keywords (keyword-spacing)](http://eslint.org/docs/rules/keyword-spacing) (Error)
 * [Disallow Use of Alert (no-alert)](http://eslint.org/docs/rules/no-alert) (Error)
-* [Disallow creation of dense arrays using the `Array` constructor (no-array-constructor)](http://eslint.org/docs/rules/no-array-constructor) (Error)
 * [Disallow Use of caller/callee (no-caller)](http://eslint.org/docs/rules/no-caller) (Error)
-* [Disallow lexical declarations in case/default clauses (no-case-declarations)](http://eslint.org/docs/rules/no-case-declarations) (Error)
-* [Disallow Shadowing of Variables Inside of catch (no-catch-shadow)](http://eslint.org/docs/rules/no-catch-shadow) (Error)
-* [Disallow modifying variables of class declarations (no-class-assign)](http://eslint.org/docs/rules/no-class-assign) (Error)
-* [Disallow Assignment in Conditional Statements (no-cond-assign)](http://eslint.org/docs/rules/no-cond-assign) (Error)
-* [Disallow arrow functions where they could be confused with comparisons (no-confusing-arrow)](http://eslint.org/docs/rules/no-confusing-arrow) (Error)
-* [Disallow Use of console (no-console)](http://eslint.org/docs/rules/no-console) (Error)
-* [Disallow modifying variables that are declared using `const` (no-const-assign)](http://eslint.org/docs/rules/no-const-assign) (Error)
-* [Disallow use of constant expressions in conditions (no-constant-condition)](http://eslint.org/docs/rules/no-constant-condition) (Error)
-* [Disallow Controls Characters in Regular Expressions (no-control-regex)](http://eslint.org/docs/rules/no-control-regex) (Error)
-* [Disallow debugger (no-debugger)](http://eslint.org/docs/rules/no-debugger) (Error)
-* [Disallow Variables Deletion (no-delete-var)](http://eslint.org/docs/rules/no-delete-var) (Error)
-* [Disallow duplicate name in class members (no-dupe-class-members)](http://eslint.org/docs/rules/no-dupe-class-members) (Error)
-* [Disallow Duplicate Keys (no-dupe-keys)](http://eslint.org/docs/rules/no-dupe-keys) (Error)
-* [No duplicate arguments (no-dupe-args)](http://eslint.org/docs/rules/no-dupe-args) (Error)
-* [Rule to disallow a duplicate case label (no-duplicate-case)](http://eslint.org/docs/rules/no-duplicate-case) (Error)
-* [Disallow Empty Block Statements (no-empty)](http://eslint.org/docs/rules/no-empty) (Error)
-* [Disallow Empty Character Classes (no-empty-character-class)](http://eslint.org/docs/rules/no-empty-character-class) (Error)
-* [Disallow empty destructuring patterns (no-empty-pattern)](http://eslint.org/docs/rules/no-empty-pattern) (Error)
+* [Disallow Regexs That Look Like Division (no-div-regex)](http://eslint.org/docs/rules/no-div-regex) (Error)
+* [Disallow return before else (no-else-return)](http://eslint.org/docs/rules/no-else-return) (Error)
+* [Disallow Null Comparisons (no-eq-null)](http://eslint.org/docs/rules/no-eq-null) (Error)
 * [Disallow eval() (no-eval)](http://eslint.org/docs/rules/no-eval) (Error)
-* [Disallow Assignment of the Exception Parameter (no-ex-assign)](http://eslint.org/docs/rules/no-ex-assign) (Error)
-* [Disallow Extending of Native Objects (no-extend-native)](http://eslint.org/docs/rules/no-extend-native) (Error)
-* [Disallow Extra Boolean Casts (no-extra-boolean-cast)](http://eslint.org/docs/rules/no-extra-boolean-cast) (Error)
-* [Disallow Extra Semicolons (no-extra-semi)](http://eslint.org/docs/rules/no-extra-semi) (Error)
+* [Disallow unnecessary function binding (no-extra-bind)](http://eslint.org/docs/rules/no-extra-bind) (Error)
 * [Disallow Case Statement Fallthrough (no-fallthrough)](http://eslint.org/docs/rules/no-fallthrough) (Error)
-* [Disallow Function Assignment (no-func-assign)](http://eslint.org/docs/rules/no-func-assign) (Error)
-* [Declarations in Program or Function Body (no-inner-declarations)](http://eslint.org/docs/rules/no-inner-declarations) (Error)
-* [Disallow Invalid Regular Expressions (no-invalid-regexp)](http://eslint.org/docs/rules/no-invalid-regexp) (Error)
-* [No irregular whitespace (no-irregular-whitespace)](http://eslint.org/docs/rules/no-irregular-whitespace) (Error)
+* [Disallow Floating Decimals (no-floating-decimal)](http://eslint.org/docs/rules/no-floating-decimal) (Error)
+* [Disallow Implied eval() (no-implied-eval)](http://eslint.org/docs/rules/no-implied-eval) (Error)
+* [Disallow Iterator (no-iterator)](http://eslint.org/docs/rules/no-iterator) (Error)
 * [Disallow Labeled Statements (no-labels)](http://eslint.org/docs/rules/no-labels) (Error)
 * [Disallow Unnecessary Nested Blocks (no-lone-blocks)](http://eslint.org/docs/rules/no-lone-blocks) (Error)
-* [Disallow `if` as the Only Statement in an `else` Block (no-lonely-if)](http://eslint.org/docs/rules/no-lonely-if) (Error)
 * [Disallow Functions in Loops (no-loop-func)](http://eslint.org/docs/rules/no-loop-func) (Error)
-* [Disallow mixed spaces and tabs for indentation (no-mixed-spaces-and-tabs)](http://eslint.org/docs/rules/no-mixed-spaces-and-tabs) (Error)
+* [Disallow Multiline Strings (no-multi-str)](http://eslint.org/docs/rules/no-multi-str) (Error)
 * [Disallow Reassignment of Native Objects (no-native-reassign)](http://eslint.org/docs/rules/no-native-reassign) (Error)
-* [Disallow negated left operand of `in` operator (no-negated-in-lhs)](http://eslint.org/docs/rules/no-negated-in-lhs) (Error)
-* [Disallow Nested Ternaries (no-nested-ternary)](http://eslint.org/docs/rules/no-nested-ternary) (Error)
 * [Disallow Function Constructor (no-new-func)](http://eslint.org/docs/rules/no-new-func) (Error)
-* [Disallow the use of the Object constructor (no-new-object)](http://eslint.org/docs/rules/no-new-object) (Error)
-* [Disallow Symbol Constructor (no-new-symbol)](http://eslint.org/docs/rules/no-new-symbol) (Error)
 * [Disallow Primitive Wrapper Instances (no-new-wrappers)](http://eslint.org/docs/rules/no-new-wrappers) (Error)
-* [Disallow Global Object Function Calls (no-obj-calls)](http://eslint.org/docs/rules/no-obj-calls) (Error)
-* [Disallow Octal Literals (no-octal)](http://eslint.org/docs/rules/no-octal) (Error)
+* [Disallow new For Side Effects (no-new)](http://eslint.org/docs/rules/no-new) (Error)
 * [Disallow Octal Escapes (no-octal-escape)](http://eslint.org/docs/rules/no-octal-escape) (Error)
+* [Disallow Octal Literals (no-octal)](http://eslint.org/docs/rules/no-octal) (Error)
+* [Disallow Use of `__proto__` (no-proto)](http://eslint.org/docs/rules/no-proto) (Error)
 * [Disallow Redeclaring Variables (no-redeclare)](http://eslint.org/docs/rules/no-redeclare) (Error)
-* [Disallow Spaces in Regular Expressions (no-regex-spaces)](http://eslint.org/docs/rules/no-regex-spaces) (Error)
 * [Disallow Assignment in return Statement (no-return-assign)](http://eslint.org/docs/rules/no-return-assign) (Error)
 * [Disallow Script URLs (no-script-url)](http://eslint.org/docs/rules/no-script-url) (Error)
-* [Disallow Self Assignment (no-self-assign)](http://eslint.org/docs/rules/no-self-assign) (Error)
-* [Disallow Shadowing of Restricted Names (no-shadow-restricted-names)](http://eslint.org/docs/rules/no-shadow-restricted-names) (Error)
-* [Disallow Spaces in Function Calls (no-spaced-func)](http://eslint.org/docs/rules/no-spaced-func) (Error)
-* [Disallow Sparse Arrays (no-sparse-arrays)](http://eslint.org/docs/rules/no-sparse-arrays) (Error)
-* [Disallow trailing spaces at the end of lines (no-trailing-spaces)](http://eslint.org/docs/rules/no-trailing-spaces) (Error)
-* [Disallow use of `this`/`super` before calling `super()` in constructors. (no-this-before-super)](http://eslint.org/docs/rules/no-this-before-super) (Error)
-* [Disallow Undeclared Variables (no-undef)](http://eslint.org/docs/rules/no-undef) (Error)
-* [Avoid unexpected multiline expressions (no-unexpected-multiline)](http://eslint.org/docs/rules/no-unexpected-multiline) (Error)
-* [Disallow conditional expressions that can be expressed with simpler constructs (no-unneeded-ternary)](http://eslint.org/docs/rules/no-unneeded-ternary) (Error)
-* [Disallow Unreachable Code (no-unreachable)](http://eslint.org/docs/rules/no-unreachable) (Error)
+* [Disallow Self Compare (no-self-compare)](http://eslint.org/docs/rules/no-self-compare) (Error)
+* [Disallow Use of the Comma Operator (no-sequences)](http://eslint.org/docs/rules/no-sequences) (Error)
+* [Restrict what can be thrown as an exception (no-throw-literal)](http://eslint.org/docs/rules/no-throw-literal) (Error)
 * [Disallow Unused Expressions (no-unused-expressions)](http://eslint.org/docs/rules/no-unused-expressions) (Error)
-* [Disallow Unused Labels (no-unused-labels)](http://eslint.org/docs/rules/no-unused-labels) (Error)
+* [Disallow use of the void operator. (no-void)](http://eslint.org/docs/rules/no-void) (Error)
+* [Require Variable Declarations to be at the top of their scope (vars-on-top)](http://eslint.org/docs/rules/vars-on-top) (Error)
+* [Require IIFEs to be Wrapped (wrap-iife)](http://eslint.org/docs/rules/wrap-iife) (Error)
+  * inside
+* [Disallow Variables Deletion (no-delete-var)](http://eslint.org/docs/rules/no-delete-var) (Error)
+* [Disallow Shadowing (no-shadow)](http://eslint.org/docs/rules/no-shadow) (Error)
+* [Disallow Initializing to undefined (no-undef-init)](http://eslint.org/docs/rules/no-undef-init) (Error)
+* [Disallow Undeclared Variables (no-undef)](http://eslint.org/docs/rules/no-undef) (Error)
+* [Disallow Use of `undefined` Variable (no-undefined)](http://eslint.org/docs/rules/no-undefined) (Error)
 * [Disallow Unused Variables (no-unused-vars)](http://eslint.org/docs/rules/no-unused-vars) (Error)
 * [Disallow Early Use (no-use-before-define)](http://eslint.org/docs/rules/no-use-before-define) (Error)
-  * nofunc
-* [Disallow unnecessary `.call()` and `.apply()`. (no-useless-call)](http://eslint.org/docs/rules/no-useless-call) (Error)
-* [Disallow unnecessary constructor (no-useless-constructor)](http://eslint.org/docs/rules/no-useless-constructor) (Error)
-* [Disallow Warning Comments (no-warning-comments)](http://eslint.org/docs/rules/no-warning-comments) (Error)
-* [No with Statements (no-with)](http://eslint.org/docs/rules/no-with) (Error)
-* [Disallow or enforce spaces inside of brackets. (array-bracket-spacing)](http://eslint.org/docs/rules/array-bracket-spacing) (Error)
-* [Require braces in arrow function body (arrow-body-style)](http://eslint.org/docs/rules/arrow-body-style) (Error)
-* [Require space before/after arrow function's arrow (arrow-spacing)](http://eslint.org/docs/rules/arrow-spacing) (Error)
-* [Treat var as Block Scoped (block-scoped-var)](http://eslint.org/docs/rules/block-scoped-var) (Error)
-* [Disallow or enforce spaces inside of single line blocks. (block-spacing)](http://eslint.org/docs/rules/block-spacing) (Error)
 * [Require Brace Style (brace-style)](http://eslint.org/docs/rules/brace-style) (Error)
-  * 1tbs
-  * allowSingleLine = true
 * [Require Camelcase (camelcase)](http://eslint.org/docs/rules/camelcase) (Error)
-* [Disallow or Enforce Dangling Commas (comma-dangle)](http://eslint.org/docs/rules/comma-dangle) (Error)
+  * properties = always
 * [Enforces spacing around commas (comma-spacing)](http://eslint.org/docs/rules/comma-spacing) (Error)
+  * before = false
+  * after = true
 * [Comma style (comma-style)](http://eslint.org/docs/rules/comma-style) (Error)
-* [Limit Cyclomatic Complexity (complexity)](http://eslint.org/docs/rules/complexity) (Error)
-  * 10
-* [Disallow or enforce spaces inside of computed properties. (computed-property-spacing)](http://eslint.org/docs/rules/computed-property-spacing) (Error)
-* [Verify calls of `super()` in constructors (constructor-super)](http://eslint.org/docs/rules/constructor-super) (Error)
-* [Require Following Curly Brace Conventions (curly)](http://eslint.org/docs/rules/curly) (Error)
-* [Require === and !== (eqeqeq)](http://eslint.org/docs/rules/eqeqeq) (Error)
-  * smart
-* [Enforce Function Style (func-style)](http://eslint.org/docs/rules/func-style) (Error)
-  * declaration
-* [Enforce spacing around the * in generator functions (generator-star-spacing)](http://eslint.org/docs/rules/generator-star-spacing) (Error)
+  * last
+* [Require Consistent This (consistent-this)](http://eslint.org/docs/rules/consistent-this) (Error)
+  * self
+* [Require file to end with single newline (eol-last)](http://eslint.org/docs/rules/eol-last) (Error)
 * [Validate Indentation (indent)](http://eslint.org/docs/rules/indent) (Error)
   * 4
   * SwitchCase = 1
 * [Enforce Property Spacing (key-spacing)](http://eslint.org/docs/rules/key-spacing) (Error)
   * beforeColon = false
   * afterColon = true
-  * mode = minimum
-* [Enforce spacing before and after keywords (keyword-spacing)](http://eslint.org/docs/rules/keyword-spacing) (Error)
-* [Limit Maximum Depth (max-depth)](http://eslint.org/docs/rules/max-depth) (Error)
-* [Limit Maximum Length of Line (max-len)](http://eslint.org/docs/rules/max-len) (Error)
-  * 140
-  * 4
-  * ignoreComments = true
-  * ignoreUrls = true
 * [Set Maximum Depth of Nested Callbacks (max-nested-callbacks)](http://eslint.org/docs/rules/max-nested-callbacks) (Error)
   * 3
-* [Limit Maximum Number of Parameters (max-params)](http://eslint.org/docs/rules/max-params) (Error)
-  * 5
-* [Limit Maximum Number of Statements (max-statements)](http://eslint.org/docs/rules/max-statements) (Error)
-  * 20
 * [Require Constructors to Use Initial Caps (new-cap)](http://eslint.org/docs/rules/new-cap) (Error)
 * [Require Parens for Constructors (new-parens)](http://eslint.org/docs/rules/new-parens) (Error)
+* [Disallow creation of dense arrays using the `Array` constructor (no-array-constructor)](http://eslint.org/docs/rules/no-array-constructor) (Error)
+* [Disallow `if` as the Only Statement in an `else` Block (no-lonely-if)](http://eslint.org/docs/rules/no-lonely-if) (Error)
+* [Disallows multiple blank lines (no-multiple-empty-lines)](http://eslint.org/docs/rules/no-multiple-empty-lines) (Warning)
+  * max = 2
+* [Disallow Nested Ternaries (no-nested-ternary)](http://eslint.org/docs/rules/no-nested-ternary) (Error)
 * [Disallow or enforce spaces inside of curly braces in objects. (object-curly-spacing)](http://eslint.org/docs/rules/object-curly-spacing) (Error)
   * always
-* [Suggest using `const` (prefer-const)](http://eslint.org/docs/rules/prefer-const) (Error)
-* [Suggest using the rest parameters instead of `arguments` (prefer-rest-params)](http://eslint.org/docs/rules/prefer-rest-params) (Error)
-* [Suggest using the spread operator instead of `.apply()`. (prefer-spread)](http://eslint.org/docs/rules/prefer-spread) (Error)
-* [Suggest using template literals instead of string concatenation. (prefer-template)](http://eslint.org/docs/rules/prefer-template) (Error)
-* [Quoting Style for Property Names (quote-props)](http://eslint.org/docs/rules/quote-props) (Error)
-  * consistent-as-needed
-* [Disallow generator functions that do not have `yield` (require-yield)](http://eslint.org/docs/rules/require-yield) (Error)
-* [Enforce or Disallow Semicolons (semi)](http://eslint.org/docs/rules/semi) (Error)
-* [Enforce spacing before and after semicolons (semi-spacing)](http://eslint.org/docs/rules/semi-spacing) (Error)
-* [Require or disallow a space before function parenthesis (space-before-function-paren)](http://eslint.org/docs/rules/space-before-function-paren) (Error)
+* [Disallow conditional expressions that can be expressed with simpler constructs (no-unneeded-ternary)](http://eslint.org/docs/rules/no-unneeded-ternary) (Error)
+* [Operator Assignment Shorthand (operator-assignment)](http://eslint.org/docs/rules/operator-assignment) (Error)
   * always
-* [Disallow or enforce spaces inside of parentheses (space-in-parens)](http://eslint.org/docs/rules/space-in-parens) (Error)
-* [Require Spaces Around Infix Operators (space-infix-ops)](http://eslint.org/docs/rules/space-infix-ops) (Error)
-* [Require or disallow spaces before/after unary operators (space-unary-ops)](http://eslint.org/docs/rules/space-unary-ops) (Error)
-* [Enforce Usage of Spacing in Template Strings (template-curly-spacing)](http://eslint.org/docs/rules/template-curly-spacing) (Error)
-* [Require isNaN() (use-isnan)](http://eslint.org/docs/rules/use-isnan) (Error)
-* [Ensures that the results of typeof are compared against a valid string (valid-typeof)](http://eslint.org/docs/rules/valid-typeof) (Error)
-* [Require IIFEs to be Wrapped (wrap-iife)](http://eslint.org/docs/rules/wrap-iife) (Error)
-  * inside
+* [Operator Linebreak (operator-linebreak)](http://eslint.org/docs/rules/operator-linebreak) (Error)
+  * after
+* [Enforce padding within blocks (padded-blocks)](http://eslint.org/docs/rules/padded-blocks) (Error)
+  * never
+* [Enforce Quote Style (quotes)](http://eslint.org/docs/rules/quotes) (Error)
+  * single
+* [Enforce or Disallow Semicolons (semi)](http://eslint.org/docs/rules/semi) (Error)
+  * always
+* [Require Or Disallow Space Before Blocks (space-before-blocks)](http://eslint.org/docs/rules/space-before-blocks) (Error)
+  * always
+* [Requires or disallows a whitespace (space or tab) beginning a comment (spaced-comment)](http://eslint.org/docs/rules/spaced-comment) (Error)
+  * always
+  * exceptions = eslint-disable,global,eslint,eslint-env

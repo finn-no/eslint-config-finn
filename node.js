@@ -1,3 +1,10 @@
+'use strict';
+module.exports = {
+    extends: [
+        'eslint-config-spt/env-node'
+    ]
+};
+/*
 module.exports = {
     env: {
         node: true
@@ -6,3 +13,4 @@ module.exports = {
         "no-console": 0
     }
 };
+*/

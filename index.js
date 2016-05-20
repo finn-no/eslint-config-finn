@@ -1,22 +1,25 @@
-var DISABLED = 0;
+'use strict';
 var ERR = 2;
+/*
+var DISABLED = 0;
 var MAX_COMPLEXITY = 10;
 var MAX_FN_PARAMS = 5;
 var MAX_FN_STATEMENTS = 20;
 var MAX_LINE_LENGTH = 140;
 var MAX_NESTED_CALLBACKS = 3;
 var TAB_WIDTH = 4;
+*/
 
 module.exports = {
-    extends: "eslint:recommended",
-    env: {
-        es6: true
-    },
+    extends: [
+        'eslint-config-spt'
+    ],
 
-    parserOptions: {
-        ecmaVersion: 6
-    },
-
+    rules: {
+        'eqeqeq': [ERR, 'smart']
+    }
+    /*
+    ,
     globals: {
         document: false,
         navigator: false,
@@ -116,5 +119,5 @@ module.exports = {
         "require-yield": ERR, //disallow generator functions that do not have yield
         "template-curly-spacing": ERR //enforce spacing around embedded expressions of template strings
         //"yield-star-spacing": [ERR, {"before": true, "after": false}] //enforce spacing around the * in yield* expressions
-    }
+    }*/
 };

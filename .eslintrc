@@ -1,0 +1,7 @@
+{
+    "extends": [
+        "./index.js",
+        "./node.js",
+        "./es5.js"
+    ]
+}
