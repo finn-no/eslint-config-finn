@@ -74,9 +74,9 @@ async.map(enabledRules.map(ruleToFile), fs.readFile, function (err, results) {
     .forEach((rule) => {
         const LEVEL = getRuleLevel(rule.config);
         let levelName;
-        if (LEVEL === 2) {
+        if (LEVEL === 2 || LEVEL === 'error') {
             levelName = 'Error';
-        } else if (LEVEL === 1) {
+        } else if (LEVEL === 1 || LEVEL === 'warn') {
             levelName = 'Warning';
         }
 
