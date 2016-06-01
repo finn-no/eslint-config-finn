@@ -2,6 +2,16 @@
   "name": "eslint-config-finn",
   "version": "1.0.0-alpha.2",
   "description": "ESLint config for FINN.no",
+  "files": [
+      "CHANGELOG.md",
+      "README.md",
+      "es-modules.js",
+      "es5.js",
+      "es6.js",
+      "index.js",
+      "node.js",
+      "react.js"
+  ],
   "main": "index.js",
   "scripts": {
     "docs": "node bin/generate-rule-docs.js index.js > rules.md",
