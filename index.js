@@ -1,4 +1,5 @@
 'use strict';
+var OFF = 0;
 var ERR = 2;
 
 module.exports = {
@@ -8,8 +9,9 @@ module.exports = {
 
     rules: {
         'eqeqeq': [ERR, 'smart'],
-        'no-undefined': 0,
-        'vars-on-top': 0,
+        'no-eq-null': OFF,
+        'no-undefined': OFF,
+        'vars-on-top': OFF,
         'comma-dangle': [ERR, 'always-multiline'],
         'computed-property-spacing': ERR,
         'no-case-declarations': ERR,
