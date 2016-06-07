@@ -8,12 +8,5 @@ module.exports = {
 
     rules: {
         'eqeqeq': [ERR, 'smart']
-    },
-
-    globals: {
-        document: false,
-        navigator: false,
-        window: false,
-        global: false
     }
 };
