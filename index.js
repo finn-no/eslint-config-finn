@@ -8,6 +8,7 @@ module.exports = {
 
     rules: {
         'eqeqeq': [ERR, 'smart'],
-        'no-undefined': 0
+        'no-undefined': 0,
+        'vars-on-top': 0,
     }
 };
