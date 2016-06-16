@@ -3,7 +3,7 @@ var ERR = 2;
 
 module.exports = {
     extends: [
-        'spt'
+        'spt',
     ],
 
     rules: {
@@ -11,5 +11,5 @@ module.exports = {
         'no-undefined': 0,
         'vars-on-top': 0,
         'comma-dangle': [ERR, 'always-multiline'],
-    }
+    },
 };
