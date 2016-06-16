@@ -7,6 +7,6 @@ module.exports = {
     ],
 
     rules: {
-        'eqeqeq': [ERR, 'smart']
+        'eqeqeq': [ERR, 'smart'],
     }
 };
