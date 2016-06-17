@@ -30,5 +30,6 @@ module.exports = {
         'prefer-spread': ERR,
         'yoda': ERR,
         'array-callback-return': ERR,
+        'no-negated-in-lhs': ERR,
     },
 };
