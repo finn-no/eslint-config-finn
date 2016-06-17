@@ -23,5 +23,6 @@ module.exports = {
         'arrow-spacing': ERR,
         'block-spacing': ERR,
         'no-debugger': ERR,
+        'no-trailing-spaces': ERR,
     },
 };
