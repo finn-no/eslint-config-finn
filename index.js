@@ -18,5 +18,6 @@ module.exports = {
         'no-console': ERR,
         'array-bracket-spacing': ERR,
         'arrow-body-style': [ERR, 'as-needed'],
+        'arrow-spacing': ERR,
     },
 };
