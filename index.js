@@ -14,5 +14,6 @@ module.exports = {
         'computed-property-spacing': ERR,
         'no-case-declarations': ERR,
         'no-class-assign': ERR,
+        'no-cond-assign': [ERR, 'always'],
     },
 };
