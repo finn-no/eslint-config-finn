@@ -16,5 +16,6 @@ module.exports = {
         'no-class-assign': ERR,
         'no-cond-assign': [ERR, 'always'],
         'no-console': ERR,
+        'array-bracket-spacing': ERR,
     },
 };
