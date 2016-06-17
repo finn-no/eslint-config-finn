@@ -29,5 +29,6 @@ module.exports = {
         'no-shadow-restricted-names': ERR,
         'prefer-spread': ERR,
         'yoda': ERR,
+        'array-callback-return': ERR,
     },
 };
