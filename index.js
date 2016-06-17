@@ -27,5 +27,6 @@ module.exports = {
         'no-useless-call': ERR,
         'no-duplicate-imports': ERR,
         'no-shadow-restricted-names': ERR,
+        'prefer-spread': ERR,
     },
 };
