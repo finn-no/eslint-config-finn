@@ -31,5 +31,6 @@ module.exports = {
         'yoda': ERR,
         'array-callback-return': ERR,
         'no-negated-in-lhs': ERR,
+        'prefer-template': ERR,
     },
 };
