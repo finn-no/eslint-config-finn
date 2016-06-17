@@ -26,5 +26,6 @@ module.exports = {
         'no-trailing-spaces': ERR,
         'no-useless-call': ERR,
         'no-duplicate-imports': ERR,
+        'no-shadow-restricted-names': ERR,
     },
 };
