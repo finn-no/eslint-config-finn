@@ -25,5 +25,6 @@ module.exports = {
         'no-debugger': ERR,
         'no-trailing-spaces': ERR,
         'no-useless-call': ERR,
+        'no-duplicate-imports': ERR,
     },
 };
