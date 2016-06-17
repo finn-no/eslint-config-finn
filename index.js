@@ -12,5 +12,6 @@ module.exports = {
         'vars-on-top': 0,
         'comma-dangle': [ERR, 'always-multiline'],
         'computed-property-spacing': ERR,
+        'no-case-declarations': ERR,
     },
 };
