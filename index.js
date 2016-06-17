@@ -15,5 +15,6 @@ module.exports = {
         'no-case-declarations': ERR,
         'no-class-assign': ERR,
         'no-cond-assign': [ERR, 'always'],
+        'no-console': ERR,
     },
 };
