@@ -24,5 +24,6 @@ module.exports = {
         'block-spacing': ERR,
         'no-debugger': ERR,
         'no-trailing-spaces': ERR,
+        'no-useless-call': ERR,
     },
 };
