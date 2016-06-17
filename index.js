@@ -13,5 +13,6 @@ module.exports = {
         'comma-dangle': [ERR, 'always-multiline'],
         'computed-property-spacing': ERR,
         'no-case-declarations': ERR,
+        'no-class-assign': ERR,
     },
 };
