@@ -68,7 +68,7 @@ async.map(enabledRules.map(ruleToFile), fs.readFile, function (err, results) {
         return {
             name,
             config: rules[name],
-            doc
+            doc,
         };
     }).map(relevantRuleDoc)
     .forEach((rule) => {
