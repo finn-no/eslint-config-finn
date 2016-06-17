@@ -22,5 +22,6 @@ module.exports = {
         'arrow-body-style': [ERR, 'as-needed'],
         'arrow-spacing': ERR,
         'block-spacing': ERR,
+        'no-debugger': ERR,
     },
 };
