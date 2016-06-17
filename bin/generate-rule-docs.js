@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 'use strict';
-/* eslint no-console: 0 */
 
 const async = require('async');
 const eslint = require('eslint');
