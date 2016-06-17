@@ -53,9 +53,7 @@ function getRuleLevel (ruleConfig) {
     return (Array.isArray(ruleConfig) ? ruleConfig[0]: ruleConfig);
 }
 
-const enabledRules = Object.keys(rules).filter((ruleName) => {
-    return getRuleLevel(rules[ruleName]);
-});
+const enabledRules = Object.keys(rules).filter((ruleName) => getRuleLevel(rules[ruleName]));
 
 async.map(enabledRules.map(ruleToFile), fs.readFile, function (err, results) {
     if (err) {
