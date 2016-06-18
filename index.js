@@ -27,6 +27,7 @@ module.exports = {
         'no-useless-call': ERR,
         'no-duplicate-imports': ERR,
         'no-shadow-restricted-names': ERR,
+        'no-use-before-define': [ERR, { functions: false }],
         'prefer-spread': ERR,
         'yoda': ERR,
         'array-callback-return': ERR,
