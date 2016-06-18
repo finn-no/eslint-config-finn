@@ -32,5 +32,6 @@ module.exports = {
         'array-callback-return': ERR,
         'no-negated-in-lhs': ERR,
         'prefer-template': ERR,
+        'one-var': [ERR, 'never'],
     },
 };
