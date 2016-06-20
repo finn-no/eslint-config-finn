@@ -43,5 +43,6 @@ module.exports = {
         'max-params': [ERR, 5],
         'space-before-function-paren': ERR,
         'brace-style': [ERR, '1tbs', { allowSingleLine: true }],
+        'no-useless-escape': ERR,
     },
 };
