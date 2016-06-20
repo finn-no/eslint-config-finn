@@ -34,5 +34,6 @@ module.exports = {
         'no-negated-in-lhs': ERR,
         'prefer-template': ERR,
         'one-var': [ERR, 'never'],
+        'no-spaced-func': ERR,
     },
 };
