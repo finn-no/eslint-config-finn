@@ -42,5 +42,6 @@ module.exports = {
         'max-len': [ERR, { code: 140, ignoreTrailingComments: true, ignoreUrls: true }],
         'max-params': [ERR, 5],
         'space-before-function-paren': ERR,
+        'brace-style': [ERR, '1tbs', { allowSingleLine: true }],
     },
 };
