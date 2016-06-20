@@ -36,5 +36,6 @@ module.exports = {
         'one-var': [ERR, 'never'],
         'no-spaced-func': ERR,
         'space-infix-ops': ERR,
+        'template-curly-spacing': ERR,
     },
 };

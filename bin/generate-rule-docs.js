@@ -78,7 +78,7 @@ async.map(enabledRules.map(ruleToFile), fs.readFile, function (err, results) {
             levelName = 'Warning';
         }
 
-        console.log(`* [${rule.generated.heading}](http://eslint.org/docs/rules/${rule.name}) (${ levelName })`);
+        console.log(`* [${rule.generated.heading}](http://eslint.org/docs/rules/${rule.name}) (${levelName})`);
 
         if (Array.isArray(rule.config) && rule.config.length > 1) {
             rule.config.slice(1).forEach(function printOpt (opt) {
