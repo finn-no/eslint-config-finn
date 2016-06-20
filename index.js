@@ -45,5 +45,6 @@ module.exports = {
         'brace-style': [ERR, '1tbs', { allowSingleLine: true }],
         'no-useless-escape': ERR,
         'quote-props': [ERR, 'consistent-as-needed'],
+        'no-negated-condition': ERR,
     },
 };
