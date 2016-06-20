@@ -38,5 +38,6 @@ module.exports = {
         'space-infix-ops': ERR,
         'template-curly-spacing': ERR,
         'space-unary-ops': ERR,
+        'no-confusing-arrow': ERR,
     },
 };
