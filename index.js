@@ -44,5 +44,6 @@ module.exports = {
         'space-before-function-paren': ERR,
         'brace-style': [ERR, '1tbs', { allowSingleLine: true }],
         'no-useless-escape': ERR,
+        'quote-props': [ERR, 'consistent-as-needed'],
     },
 };
