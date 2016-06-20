@@ -39,5 +39,6 @@ module.exports = {
         'template-curly-spacing': ERR,
         'space-unary-ops': ERR,
         'no-confusing-arrow': ERR,
+        'max-len': [ERR, { code: 140, ignoreTrailingComments: true, ignoreUrls: true }],
     },
 };
