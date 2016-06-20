@@ -50,7 +50,7 @@ const config = new CLIEngine({
 const rules = config.rules;
 
 function getRuleLevel (ruleConfig) {
-    return (Array.isArray(ruleConfig) ? ruleConfig[0]: ruleConfig);
+    return (Array.isArray(ruleConfig) ? ruleConfig[0] : ruleConfig);
 }
 
 const enabledRules = Object.keys(rules).filter((ruleName) => getRuleLevel(rules[ruleName]));

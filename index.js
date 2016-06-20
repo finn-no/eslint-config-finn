@@ -35,5 +35,6 @@ module.exports = {
         'prefer-template': ERR,
         'one-var': [ERR, 'never'],
         'no-spaced-func': ERR,
+        'space-infix-ops': ERR,
     },
 };
