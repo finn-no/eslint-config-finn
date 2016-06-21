@@ -27,7 +27,7 @@ function relevantRuleDoc (rule) {
     let isListItem = false;
     let itemText;
 
-    const relevantDoc = tokens.reduce((r, token, i) => {
+    const relevantDoc = tokens.reduce((r, token) => {
         if (token.type === 'heading') {
             currentHeading[`l${token.depth}`] = token.text;
         } else if (token.type === 'list_item_start') {
@@ -94,17 +94,8 @@ async.map(enabledRules.map(ruleToFile), fs.readFile, function (err, results) {
         };
     }).map(relevantRuleDoc)
     .forEach((rule) => {
-        const LEVEL = getRuleLevel(rule.config);
-        let levelName;
-        if (LEVEL === 2 || LEVEL === 'error') {
-            levelName = 'Error';
-        } else if (LEVEL === 1 || LEVEL === 'warn') {
-            levelName = 'Warning';
-        }
-
         console.log(`## [${rule.name}](http://eslint.org/docs/rules/${rule.name})`);
         console.log(`${rule.generated.heading}`);
-        console.log(`Error level: ${levelName}`);
         console.log('');
 
         if (rule.generated.options && rule.generated.options.length) {

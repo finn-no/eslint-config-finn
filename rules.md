@@ -2,22 +2,18 @@
 
 ## [constructor-super](http://eslint.org/docs/rules/constructor-super)
 Verify calls of `super()` in constructors (constructor-super)
-Error level: Error
 
 
 ## [no-this-before-super](http://eslint.org/docs/rules/no-this-before-super)
 Disallow use of `this`/`super` before calling `super()` in constructors. (no-this-before-super)
-Error level: Error
 
 
 ## [no-var](http://eslint.org/docs/rules/no-var)
 require `let` or `const` instead of `var` (no-var)
-Error level: Error
 
 
 ## [object-shorthand](http://eslint.org/docs/rules/object-shorthand)
 Require Object Literal Shorthand Syntax (object-shorthand)
-Error level: Warning
 
 ### Available options
 * `"always"` expects that the shorthand will be used whenever possible.
@@ -28,7 +24,6 @@ Error level: Warning
 
 ## [strict](http://eslint.org/docs/rules/strict)
 require or disallow strict mode directives (strict)
-Error level: Error
 
 ### Available options
 * `"global"` if ESLint considers a file to be a **CommonJS** module
@@ -44,12 +39,10 @@ Error level: Error
 
 ## [no-unexpected-multiline](http://eslint.org/docs/rules/no-unexpected-multiline)
 disallow confusing multiline expressions (no-unexpected-multiline)
-Error level: Warning
 
 
 ## [accessor-pairs](http://eslint.org/docs/rules/accessor-pairs)
 Enforces getter/setter pairs in objects (accessor-pairs)
-Error level: Error
 
 ### Available options
 * `setWithoutGet` set to `true` will warn for setters without getters (Default `true`).
@@ -58,17 +51,14 @@ Error level: Error
 
 ## [block-scoped-var](http://eslint.org/docs/rules/block-scoped-var)
 Treat var as Block Scoped (block-scoped-var)
-Error level: Error
 
 
 ## [curly](http://eslint.org/docs/rules/curly)
 Require Following Curly Brace Conventions (curly)
-Error level: Error
 
 
 ## [dot-notation](http://eslint.org/docs/rules/dot-notation)
 Require Dot Notation (dot-notation)
-Error level: Error
 
 ### Available options
 * Set the `allowKeywords` option to `false` (default is `true`) to follow ECMAScript version 3 compatible style, avoiding dot notation for reserved word properties.
@@ -77,7 +67,6 @@ Error level: Error
 
 ## [eqeqeq](http://eslint.org/docs/rules/eqeqeq)
 Require === and !== (eqeqeq)
-Error level: Error
 
 ### Available options
 * Comparing two literal values
@@ -89,12 +78,10 @@ Error level: Error
 
 ## [guard-for-in](http://eslint.org/docs/rules/guard-for-in)
 Require Guarding for-in (guard-for-in)
-Error level: Error
 
 
 ## [keyword-spacing](http://eslint.org/docs/rules/keyword-spacing)
 enforce consistent spacing before and after keywords (keyword-spacing)
-Error level: Error
 
 ### Available options
 * `"before": true` (default) requires at least one space before keywords
@@ -106,37 +93,30 @@ Error level: Error
 
 ## [no-alert](http://eslint.org/docs/rules/no-alert)
 Disallow Use of Alert (no-alert)
-Error level: Error
 
 
 ## [no-caller](http://eslint.org/docs/rules/no-caller)
 Disallow Use of caller/callee (no-caller)
-Error level: Error
 
 
 ## [no-div-regex](http://eslint.org/docs/rules/no-div-regex)
 Disallow Regexs That Look Like Division (no-div-regex)
-Error level: Error
 
 
 ## [no-else-return](http://eslint.org/docs/rules/no-else-return)
 Disallow return before else (no-else-return)
-Error level: Error
 
 
 ## [no-eval](http://eslint.org/docs/rules/no-eval)
 Disallow eval() (no-eval)
-Error level: Error
 
 
 ## [no-extra-bind](http://eslint.org/docs/rules/no-extra-bind)
 Disallow unnecessary function binding (no-extra-bind)
-Error level: Error
 
 
 ## [no-fallthrough](http://eslint.org/docs/rules/no-fallthrough)
 Disallow Case Statement Fallthrough (no-fallthrough)
-Error level: Error
 
 ### Available options
 * Set the `commentPattern` option to a regular expression string to change the test for intentional fallthrough comment
@@ -144,22 +124,18 @@ Error level: Error
 
 ## [no-floating-decimal](http://eslint.org/docs/rules/no-floating-decimal)
 Disallow Floating Decimals (no-floating-decimal)
-Error level: Error
 
 
 ## [no-implied-eval](http://eslint.org/docs/rules/no-implied-eval)
 Disallow Implied eval() (no-implied-eval)
-Error level: Error
 
 
 ## [no-iterator](http://eslint.org/docs/rules/no-iterator)
 Disallow Iterator (no-iterator)
-Error level: Error
 
 
 ## [no-labels](http://eslint.org/docs/rules/no-labels)
 Disallow Labeled Statements (no-labels)
-Error level: Error
 
 ### Available options
 * `"allowLoop"` (`boolean`, default is `false`) - If this option was set `true`, this rule ignores labels which are sticking to loop statements.
@@ -168,62 +144,50 @@ Error level: Error
 
 ## [no-lone-blocks](http://eslint.org/docs/rules/no-lone-blocks)
 Disallow Unnecessary Nested Blocks (no-lone-blocks)
-Error level: Error
 
 
 ## [no-loop-func](http://eslint.org/docs/rules/no-loop-func)
 Disallow Functions in Loops (no-loop-func)
-Error level: Error
 
 
 ## [no-multi-str](http://eslint.org/docs/rules/no-multi-str)
 Disallow Multiline Strings (no-multi-str)
-Error level: Error
 
 
 ## [no-native-reassign](http://eslint.org/docs/rules/no-native-reassign)
 Disallow Reassignment of Native Objects (no-native-reassign)
-Error level: Error
 
 
 ## [no-new-func](http://eslint.org/docs/rules/no-new-func)
 Disallow Function Constructor (no-new-func)
-Error level: Error
 
 
 ## [no-new-wrappers](http://eslint.org/docs/rules/no-new-wrappers)
 Disallow Primitive Wrapper Instances (no-new-wrappers)
-Error level: Error
 
 
 ## [no-new](http://eslint.org/docs/rules/no-new)
 Disallow new For Side Effects (no-new)
-Error level: Error
 
 
 ## [no-octal-escape](http://eslint.org/docs/rules/no-octal-escape)
 disallow octal escape sequences in string literals (no-octal-escape)
-Error level: Error
 
 
 ## [no-octal](http://eslint.org/docs/rules/no-octal)
 disallow octal literals (no-octal)
-Error level: Error
 
 
 ## [no-proto](http://eslint.org/docs/rules/no-proto)
 Disallow Use of `__proto__` (no-proto)
-Error level: Error
 
 
 ## [no-redeclare](http://eslint.org/docs/rules/no-redeclare)
 Disallow Redeclaring Variables (no-redeclare)
-Error level: Error
 
 
 ## [no-return-assign](http://eslint.org/docs/rules/no-return-assign)
 Disallow Assignment in return Statement (no-return-assign)
-Error level: Error
 
 ### Available options
 * `except-parens` (default): Disallow assignments unless they are enclosed in parentheses.
@@ -232,27 +196,22 @@ Error level: Error
 
 ## [no-script-url](http://eslint.org/docs/rules/no-script-url)
 Disallow Script URLs (no-script-url)
-Error level: Error
 
 
 ## [no-self-compare](http://eslint.org/docs/rules/no-self-compare)
 Disallow Self Compare (no-self-compare)
-Error level: Error
 
 
 ## [no-sequences](http://eslint.org/docs/rules/no-sequences)
 Disallow Use of the Comma Operator (no-sequences)
-Error level: Error
 
 
 ## [no-throw-literal](http://eslint.org/docs/rules/no-throw-literal)
 Restrict what can be thrown as an exception (no-throw-literal)
-Error level: Error
 
 
 ## [no-unused-expressions](http://eslint.org/docs/rules/no-unused-expressions)
 Disallow Unused Expressions (no-unused-expressions)
-Error level: Error
 
 ### Available options
 * `allowShortCircuit` set to `true` will allow you to use short circuit evaluations in your expressions (Default: `false`).
@@ -261,12 +220,10 @@ Error level: Error
 
 ## [no-void](http://eslint.org/docs/rules/no-void)
 Disallow use of the void operator. (no-void)
-Error level: Error
 
 
 ## [wrap-iife](http://eslint.org/docs/rules/wrap-iife)
 Require IIFEs to be Wrapped (wrap-iife)
-Error level: Error
 
 ### Available options
 * `"outside"` enforces always wrapping the *call* expression. The default is `"outside"`.
@@ -278,12 +235,10 @@ Error level: Error
 
 ## [no-delete-var](http://eslint.org/docs/rules/no-delete-var)
 disallow deleting variables (no-delete-var)
-Error level: Error
 
 
 ## [no-shadow](http://eslint.org/docs/rules/no-shadow)
 Disallow Shadowing (no-shadow)
-Error level: Error
 
 ### Available options
 * `functions` (by default) - reports shadowing before the outer functions are defined.
@@ -293,12 +248,10 @@ Error level: Error
 
 ## [no-undef-init](http://eslint.org/docs/rules/no-undef-init)
 Disallow Initializing to undefined (no-undef-init)
-Error level: Error
 
 
 ## [no-undef](http://eslint.org/docs/rules/no-undef)
 Disallow Undeclared Variables (no-undef)
-Error level: Error
 
 ### Available options
 * `typeof` set to true will warn for variables used inside typeof check (Default false).
@@ -306,7 +259,6 @@ Error level: Error
 
 ## [no-unused-vars](http://eslint.org/docs/rules/no-unused-vars)
 Disallow Unused Variables (no-unused-vars)
-Error level: Error
 
 ### Available options
 * `all` checks all variables for usage, including those in the global scope. This is the default setting.
@@ -320,7 +272,6 @@ Error level: Error
 
 ## [no-use-before-define](http://eslint.org/docs/rules/no-use-before-define)
 Disallow Early Use (no-use-before-define)
-Error level: Error
 
 ### Available options
 * `functions` (`boolean`) - The flag which shows whether or not this rule checks function declarations. If this is `true`, this rule warns every reference to a function before the function declaration. Otherwise, ignores those references. Function declarations are hoisted, so it's safe. Default is `true`.
@@ -331,7 +282,6 @@ Error level: Error
 
 ## [brace-style](http://eslint.org/docs/rules/brace-style)
 Require Brace Style (brace-style)
-Error level: Error
 
 ### Available options
 * `"1tbs"` (default) enforces one true brace style
@@ -345,7 +295,6 @@ Error level: Error
 
 ## [camelcase](http://eslint.org/docs/rules/camelcase)
 Require Camelcase (camelcase)
-Error level: Error
 
 ### Available options
 * `"properties": "always"` (default) enforces camelcase style for property names
@@ -356,7 +305,6 @@ Error level: Error
 
 ## [comma-spacing](http://eslint.org/docs/rules/comma-spacing)
 Enforces spacing around commas (comma-spacing)
-Error level: Error
 
 ### Available options
 * `"before": false` (default) disallows spaces before commas
@@ -370,7 +318,6 @@ Error level: Error
 
 ## [comma-style](http://eslint.org/docs/rules/comma-style)
 Comma style (comma-style)
-Error level: Error
 
 ### Available options
 * `"last"` (default) requires a comma after and on the same line as an array element, object property, or variable declaration
@@ -384,7 +331,6 @@ Error level: Error
 
 ## [consistent-this](http://eslint.org/docs/rules/consistent-this)
 Require Consistent This (consistent-this)
-Error level: Error
 
 ### Available options
 * designated alias names for `this` (default `"that"`)
@@ -394,7 +340,6 @@ Error level: Error
 
 ## [eol-last](http://eslint.org/docs/rules/eol-last)
 Require file to end with single newline (eol-last)
-Error level: Error
 
 ### Available options
 * `"unix"` (default) enforces line feed (LF) as newline
@@ -403,7 +348,6 @@ Error level: Error
 
 ## [indent](http://eslint.org/docs/rules/indent)
 enforce consistent indentation (indent)
-Error level: Error
 
 ### Available options
 * `"SwitchCase"` (default: 0) enforces indentation level for `case` clauses in `switch` statements
@@ -422,7 +366,6 @@ Error level: Error
 
 ## [key-spacing](http://eslint.org/docs/rules/key-spacing)
 enforce consistent spacing between keys and values in object literal properties (key-spacing)
-Error level: Error
 
 ### Available options
 * `"beforeColon": false` (default) disallows spaces between the key and the colon in object literals
@@ -442,7 +385,6 @@ Error level: Error
 
 ## [max-nested-callbacks](http://eslint.org/docs/rules/max-nested-callbacks)
 enforce a maximum depth that callbacks can be nested (max-nested-callbacks)
-Error level: Error
 
 ### Available options
 * `"max"` (default `10`) enforces a maximum depth that callbacks can be nested
@@ -452,7 +394,6 @@ Error level: Error
 
 ## [new-cap](http://eslint.org/docs/rules/new-cap)
 require constructor `function` names to begin with a capital letter (new-cap)
-Error level: Error
 
 ### Available options
 * `"newIsCap": true` (default) requires all `new` operators to be called with uppercase-started functions.
@@ -467,22 +408,18 @@ Error level: Error
 
 ## [new-parens](http://eslint.org/docs/rules/new-parens)
 require parentheses when invoking a constructor with no arguments (new-parens)
-Error level: Error
 
 
 ## [no-array-constructor](http://eslint.org/docs/rules/no-array-constructor)
 disallow `Array` constructors (no-array-constructor)
-Error level: Error
 
 
 ## [no-lonely-if](http://eslint.org/docs/rules/no-lonely-if)
 disallow `if` statements as the only statement in `else` blocks (no-lonely-if)
-Error level: Error
 
 
 ## [no-multiple-empty-lines](http://eslint.org/docs/rules/no-multiple-empty-lines)
 disallow multiple empty lines (no-multiple-empty-lines)
-Error level: Warning
 
 ### Available options
 * `"max"` (default: `2`) enforces a maximum number of consecutive empty lines.
@@ -494,12 +431,10 @@ Error level: Warning
 
 ## [no-nested-ternary](http://eslint.org/docs/rules/no-nested-ternary)
 disallow nested ternary expressions (no-nested-ternary)
-Error level: Error
 
 
 ## [object-curly-spacing](http://eslint.org/docs/rules/object-curly-spacing)
 Disallow or enforce spaces inside of curly braces in objects. (object-curly-spacing)
-Error level: Error
 
 ### Available options
 * `"always"` enforces a space inside of curly braces
@@ -510,33 +445,28 @@ Error level: Error
 
 ## [no-unneeded-ternary](http://eslint.org/docs/rules/no-unneeded-ternary)
 Disallow conditional expressions that can be expressed with simpler constructs (no-unneeded-ternary)
-Error level: Error
 
 
 ## [operator-assignment](http://eslint.org/docs/rules/operator-assignment)
 Operator Assignment Shorthand (operator-assignment)
-Error level: Error
 
 ### Current options
   * always
 
 ## [operator-linebreak](http://eslint.org/docs/rules/operator-linebreak)
 Operator Linebreak (operator-linebreak)
-Error level: Error
 
 ### Current options
   * after
 
 ## [padded-blocks](http://eslint.org/docs/rules/padded-blocks)
 Enforce padding within blocks (padded-blocks)
-Error level: Error
 
 ### Current options
   * never
 
 ## [quotes](http://eslint.org/docs/rules/quotes)
 Enforce Quote Style (quotes)
-Error level: Error
 
 ### Current options
   * single
@@ -544,21 +474,18 @@ Error level: Error
 
 ## [semi](http://eslint.org/docs/rules/semi)
 Enforce or Disallow Semicolons (semi)
-Error level: Error
 
 ### Current options
   * always
 
 ## [space-before-blocks](http://eslint.org/docs/rules/space-before-blocks)
 Require Or Disallow Space Before Blocks (space-before-blocks)
-Error level: Error
 
 ### Current options
   * always
 
 ## [spaced-comment](http://eslint.org/docs/rules/spaced-comment)
 Requires or disallows a whitespace (space or tab) beginning a comment (spaced-comment)
-Error level: Error
 
 ### Current options
   * always
@@ -566,7 +493,6 @@ Error level: Error
 
 ## [array-bracket-spacing](http://eslint.org/docs/rules/array-bracket-spacing)
 Disallow or enforce spaces inside of brackets (array-bracket-spacing)
-Error level: Error
 
 ### Available options
 * `"never"` (default) disallows spaces inside array brackets
@@ -583,12 +509,10 @@ Error level: Error
 
 ## [array-callback-return](http://eslint.org/docs/rules/array-callback-return)
 Enforces return statements in callbacks of array's methods (array-callback-return)
-Error level: Error
 
 
 ## [arrow-body-style](http://eslint.org/docs/rules/arrow-body-style)
 Require braces in arrow function body (arrow-body-style)
-Error level: Error
 
 ### Available options
 * `"always"` enforces braces around the function body
@@ -600,12 +524,10 @@ Error level: Error
 
 ## [arrow-spacing](http://eslint.org/docs/rules/arrow-spacing)
 Require space before/after arrow function's arrow (arrow-spacing)
-Error level: Error
 
 
 ## [block-spacing](http://eslint.org/docs/rules/block-spacing)
 Disallow or enforce spaces inside of single line blocks (block-spacing)
-Error level: Error
 
 ### Available options
 * `"always"` (default) requires one or more spaces
@@ -614,7 +536,6 @@ Error level: Error
 
 ## [comma-dangle](http://eslint.org/docs/rules/comma-dangle)
 require or disallow trailing commas (comma-dangle)
-Error level: Error
 
 ### Available options
 * `"never"` (default) disallows trailing commas
@@ -627,7 +548,6 @@ Error level: Error
 
 ## [computed-property-spacing](http://eslint.org/docs/rules/computed-property-spacing)
 Disallow or enforce spaces inside of computed properties (computed-property-spacing)
-Error level: Error
 
 ### Available options
 * `"never"` (default) disallows spaces inside computed property brackets
@@ -636,7 +556,6 @@ Error level: Error
 
 ## [max-depth](http://eslint.org/docs/rules/max-depth)
 enforce a maximum depth that blocks can be nested (max-depth)
-Error level: Error
 
 ### Available options
 * `"max"` (default `4`) enforces a maximum depth that blocks can be nested
@@ -644,7 +563,6 @@ Error level: Error
 
 ## [max-len](http://eslint.org/docs/rules/max-len)
 enforce a maximum line length (max-len)
-Error level: Error
 
 ### Available options
 * `"code"` (default `80`) enforces a maximum line length
@@ -662,7 +580,6 @@ Error level: Error
 
 ## [max-params](http://eslint.org/docs/rules/max-params)
 enforce a maximum number of parameters in `function` definitions (max-params)
-Error level: Error
 
 ### Available options
 * `"max"` (default `3`) enforces a maximum number of parameters in function definitions
@@ -672,17 +589,14 @@ Error level: Error
 
 ## [no-case-declarations](http://eslint.org/docs/rules/no-case-declarations)
 Disallow lexical declarations in case/default clauses (no-case-declarations)
-Error level: Error
 
 
 ## [no-class-assign](http://eslint.org/docs/rules/no-class-assign)
 Disallow modifying variables of class declarations (no-class-assign)
-Error level: Error
 
 
 ## [no-cond-assign](http://eslint.org/docs/rules/no-cond-assign)
 disallow assignment operators in conditional statements (no-cond-assign)
-Error level: Error
 
 ### Available options
 * `"except-parens"` (default) allows assignments in test conditions *only if* they are enclosed in parentheses (for example, to allow reassigning a variable in the test of a `while` or `do...while` loop)
@@ -693,7 +607,6 @@ Error level: Error
 
 ## [no-confusing-arrow](http://eslint.org/docs/rules/no-confusing-arrow)
 Disallow arrow functions where they could be confused with comparisons (no-confusing-arrow)
-Error level: Error
 
 ### Available options
 * `true` relaxes the rule and accepts parenthesis as a valid "confusion-preventing" syntax.
@@ -702,7 +615,6 @@ Error level: Error
 
 ## [no-console](http://eslint.org/docs/rules/no-console)
 disallow the use of `console` (no-console)
-Error level: Error
 
 ### Available options
 * `"allow"` has an array of strings which are allowed methods of the `console` object
@@ -710,52 +622,42 @@ Error level: Error
 
 ## [no-debugger](http://eslint.org/docs/rules/no-debugger)
 disallow the use of `debugger` (no-debugger)
-Error level: Error
 
 
 ## [no-duplicate-imports](http://eslint.org/docs/rules/no-duplicate-imports)
 Disallow duplicate imports (no-duplicate-imports)
-Error level: Error
 
 
 ## [no-negated-condition](http://eslint.org/docs/rules/no-negated-condition)
 disallow negated conditions (no-negated-condition)
-Error level: Error
 
 
 ## [no-negated-in-lhs](http://eslint.org/docs/rules/no-negated-in-lhs)
 disallow negating the left operand in `in` expressions (no-negated-in-lhs)
-Error level: Error
 
 
 ## [no-shadow-restricted-names](http://eslint.org/docs/rules/no-shadow-restricted-names)
 Disallow Shadowing of Restricted Names (no-shadow-restricted-names)
-Error level: Error
 
 
 ## [no-spaced-func](http://eslint.org/docs/rules/no-spaced-func)
 disallow spacing between `function` identifiers and their applications (no-spaced-func)
-Error level: Error
 
 
 ## [no-trailing-spaces](http://eslint.org/docs/rules/no-trailing-spaces)
 Disallow trailing spaces at the end of lines (no-trailing-spaces)
-Error level: Error
 
 
 ## [no-useless-call](http://eslint.org/docs/rules/no-useless-call)
 Disallow unnecessary `.call()` and `.apply()`. (no-useless-call)
-Error level: Error
 
 
 ## [no-useless-escape](http://eslint.org/docs/rules/no-useless-escape)
 Disallow unnecessary escape usage (no-useless-escape)
-Error level: Error
 
 
 ## [one-var](http://eslint.org/docs/rules/one-var)
 Require or Disallow One Variable Declaration per Scope (one-var)
-Error level: Error
 
 ### Available options
 * `var`
@@ -769,34 +671,28 @@ Error level: Error
 
 ## [prefer-spread](http://eslint.org/docs/rules/prefer-spread)
 Suggest using the spread operator instead of `.apply()`. (prefer-spread)
-Error level: Error
 
 
 ## [prefer-template](http://eslint.org/docs/rules/prefer-template)
 Suggest using template literals instead of string concatenation. (prefer-template)
-Error level: Error
 
 
 ## [quote-props](http://eslint.org/docs/rules/quote-props)
 Quoting Style for Property Names (quote-props)
-Error level: Error
 
 ### Current options
   * consistent-as-needed
 
 ## [space-before-function-paren](http://eslint.org/docs/rules/space-before-function-paren)
 Require or disallow a space before function parenthesis (space-before-function-paren)
-Error level: Error
 
 
 ## [space-infix-ops](http://eslint.org/docs/rules/space-infix-ops)
 Require Spaces Around Infix Operators (space-infix-ops)
-Error level: Error
 
 
 ## [space-unary-ops](http://eslint.org/docs/rules/space-unary-ops)
 Require or disallow spaces before/after unary operators (space-unary-ops)
-Error level: Error
 
 ### Available options
 * `words` - applies to unary word operators such as: `new`, `delete`, `typeof`, `void`, `yield`
@@ -806,7 +702,6 @@ Error level: Error
 
 ## [template-curly-spacing](http://eslint.org/docs/rules/template-curly-spacing)
 Enforce Usage of Spacing in Template Strings (template-curly-spacing)
-Error level: Error
 
 ### Available options
 * `"never"` (by default) - Disallows spaces inside of the curly brace pair.
@@ -815,7 +710,6 @@ Error level: Error
 
 ## [yoda](http://eslint.org/docs/rules/yoda)
 Require or disallow Yoda Conditions (yoda)
-Error level: Error
 
 ### Available options
 * If it is the default `"never"`, then comparisons must never be Yoda conditions.
