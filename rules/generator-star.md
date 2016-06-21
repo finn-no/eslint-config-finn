@@ -1,6 +1,6 @@
-# Enforce the position of the * in generators (generator-star)
+# generator-star: enforce consistent spacing around the asterisk in generator functions
 
-**Replacement notice**: This rule was removed in ESLint v1.0 and replaced by the [generator-star-spacing](generator-star-spacing.md) rule.
+(removed) This rule was **removed** in ESLint v1.0 and **replaced** by the [generator-star-spacing](generator-star-spacing.md) rule.
 
 Generators are a new type of function in ECMAScript 6 that can return multiple values over time.
 These special functions are indicated by placing an `*` after the `function` keyword.
@@ -49,7 +49,7 @@ option for this rule is a string specifying the placement of the asterisk. For t
 You can set the style in configuration like this:
 
 ```json
-"generator-star": [2, "start"]
+"generator-star": ["error", "start"]
 ```
 
 When using `"start"` this placement will be enforced:
@@ -115,9 +115,7 @@ var generator = function*() {
 }
 ```
 
-To use this rule you must set the `generators` flag to `true` in the `ecmaFeatures` configuration object.
-
-Also note, that shortened object literal syntax for generators is not affected by this rule.
+The shortened object literal syntax for generators is not affected by this rule.
 
 ## When Not To Use It
 

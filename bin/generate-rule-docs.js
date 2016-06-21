@@ -10,23 +10,47 @@ const path = require('path');
 const CLIEngine = eslint.CLIEngine;
 const configFile = path.resolve(process.cwd(), process.argv[2]);
 const rulesDocPath = path.resolve(__dirname, '../rules');
-const lexer = new marked.Lexer();
 
 function ruleToFile (ruleName) {
     return path.resolve(rulesDocPath, `${ruleName}.md`);
 }
 
 function relevantRuleDoc (rule) {
+    const lexer = new marked.Lexer();
     const tokens = lexer.lex(rule.doc);
+    let currentHeading = {
+        l1: '',
+        l2: '',
+        l3: '',
+        l4: '',
+    };
+    let isListItem = false;
+    let itemText;
 
-    const relevantDoc = tokens.reduce((r, token) => {
+    const relevantDoc = tokens.reduce((r, token, i) => {
+        if (token.type === 'heading') {
+            currentHeading[`l${token.depth}`] = token.text;
+        } else if (token.type === 'list_item_start') {
+            isListItem = true;
+            itemText = [];
+        } else if (token.type === 'list_item_end') {
+            isListItem = false;
+            if (itemText && itemText.length) {
+                r.options.push(itemText.join(' '));
+            }
+            itemText = null;
+        }
+
         if (token.type === 'heading' && token.depth === 1) {
             r.heading = token.text;
+        } else if (currentHeading.l2 === 'Options' && isListItem && token.text) {
+            itemText.push(token.text);
         } else if (token.type === 'code') {
             r.code.push(token.text);
         }
+
         return r;
-    }, { code: [] });
+    }, { code: [], options: [] });
 
     rule.generated = relevantDoc;
 
@@ -78,13 +102,24 @@ async.map(enabledRules.map(ruleToFile), fs.readFile, function (err, results) {
             levelName = 'Warning';
         }
 
-        console.log(`* [${rule.generated.heading}](http://eslint.org/docs/rules/${rule.name}) (${levelName})`);
+        console.log(`## [${rule.name}](http://eslint.org/docs/rules/${rule.name})`);
+        console.log(`${rule.generated.heading}`);
+        console.log(`Error level: ${levelName}`);
+        console.log('');
+
+        if (rule.generated.options && rule.generated.options.length) {
+            console.log('### Available options');
+            rule.generated.options.forEach(o => { console.log(`* ${o}`); });
+            console.log('');
+        }
 
         if (Array.isArray(rule.config) && rule.config.length > 1) {
+            console.log('### Current options');
             rule.config.slice(1).forEach(function printOpt (opt) {
                 printOption(opt);
             });
         }
+
+        console.log('');
     });
 });
-// var messages = linter.verify('var foo;', config);

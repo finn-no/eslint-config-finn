@@ -1,4 +1,6 @@
-# Disallow or enforce spaces inside of computed properties. (computed-property-spacing)
+# Disallow or enforce spaces inside of computed properties (computed-property-spacing)
+
+(fixable) The `--fix` option on the [command line](../user-guide/command-line-interface#fix) automatically fixes problems reported by this rule.
 
 While formatting preferences are very personal, a number of style guides require
 or disallow spaces between computed properties in the following situations:
@@ -6,44 +8,36 @@ or disallow spaces between computed properties in the following situations:
 ```js
 /*eslint-env es6*/
 
-// computed properties
 var obj = { prop: "value" };
 var a = "prop";
-var x = obj[a];
+var x = obj[a]; // computed property in object member expression
 
-// object literal computed properties (EcmaScript 6)
 var a = "prop";
-var obj = { [a]: "value" };
+var obj = {
+  [a]: "value" // computed property key in object literal (ECMAScript 6)
+};
 ```
-
-**Fixable:** This rule is automatically fixable using the `--fix` flag on the command line.
 
 ## Rule Details
 
-This rule aims to maintain consistency around the spacing inside of computed properties.
+This rule enforces consistent spacing inside computed property brackets.
 
 It either requires or disallows spaces between the brackets and the values inside of them.
-Brackets that are separated from the adjacent value by a new line are exempt from this rule.
+This rule does not apply to brackets that are separated from the adjacent value by a newline.
 
 ## Options
 
-There are two main options for the rule:
+This rule has a string option:
 
-* `"always"` enforces a space inside of computed properties
-* `"never"` disallows spaces inside of computed properties (default)
+* `"never"` (default) disallows spaces inside computed property brackets
+* `"always"` requires one or more spaces inside computed property brackets
 
-Depending on your coding conventions, you can choose either option by specifying it in your configuration:
+### never
 
-```json
-"computed-property-spacing": [2, "never"]
-```
-
-### "never"
-
-When `"never"` is set, the following patterns will give a warning:
+Examples of **incorrect** code for this rule with the default `"never"` option:
 
 ```js
-/*eslint computed-property-spacing: [2, "never"]*/
+/*eslint computed-property-spacing: ["error", "never"]*/
 /*eslint-env es6*/
 
 obj[foo ]
@@ -52,10 +46,10 @@ var x = {[ b ]: a}
 obj[foo[ bar ]]
 ```
 
-The following patterns are considered correct:
+Examples of **correct** code for this rule with the default `"never"` option:
 
 ```js
-/*eslint computed-property-spacing: [2, "never"]*/
+/*eslint computed-property-spacing: ["error", "never"]*/
 /*eslint-env es6*/
 
 obj[foo]
@@ -64,34 +58,32 @@ var x = {[b]: a}
 obj[foo[bar]]
 ```
 
-### "always"
+### always
 
-When `"always"` is used, the following patterns will give a warning:
+Examples of **incorrect** code for this rule with the `"always"` option:
 
 ```js
-/*eslint computed-property-spacing: [2, "always"]*/
+/*eslint computed-property-spacing: ["error", "always"]*/
 /*eslint-env es6*/
 
 obj[foo]
 var x = {[b]: a}
 obj[ foo]
-obj[ foo ]
 obj['foo' ]
 obj[foo[ bar ]]
 var x = {[ b]: a}
 ```
 
-The following patterns are considered correct:
+Examples of **correct** code for this rule with the `"always"` option:
 
 ```js
-/*eslint computed-property-spacing: [2, "always"]*/
+/*eslint computed-property-spacing: ["error", "always"]*/
 /*eslint-env es6*/
 
 obj[ foo ]
 obj[ 'foo' ]
 var x = {[ b ]: a}
 obj[ foo[ bar ] ]
-
 ```
 
 
@@ -101,7 +93,6 @@ You can turn this rule off if you are not concerned with the consistency of comp
 
 ## Related Rules
 
+* [array-bracket-spacing](array-bracket-spacing.md)
 * [comma-spacing](comma-spacing.md)
 * [space-in-parens](space-in-parens.md)
-* [computed-property-spacing](computed-property-spacing.md)
-* [space-in-brackets](space-in-brackets.md) (deprecated)

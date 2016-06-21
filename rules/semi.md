@@ -1,5 +1,7 @@
 # Enforce or Disallow Semicolons (semi)
 
+(fixable) The `--fix` option on the [command line](../user-guide/command-line-interface#fix) automatically fixes problems reported by this rule.
+
 JavaScript is unique amongst the C-like languages in that it doesn't require semicolons at the end of each statement. In many cases, the JavaScript engine can determine that a semicolon should be in a certain spot and will automatically add it. This feature is known as **automatic semicolon insertion (ASI)** and is considered one of the more controversial features of JavaScript. For example, the following lines are both valid:
 
 ```js
@@ -57,8 +59,6 @@ Although ASI allows for more freedom over your coding style, it can also make yo
 
 This rule is aimed at ensuring consistent use of semicolons. You can decide whether or not to require semicolons at the end of statements.
 
-**Fixable:** This rule is automatically fixable using the `--fix` flag on the command line.
-
 ## Options
 
 The rule takes one or two options. The first one is a string, which could be `"always"` or `"never"`. The default is `"always"`. The second one is an object for more fine-grained configuration when the first option is `"always"`.
@@ -70,13 +70,13 @@ You can set the option in configuration like this:
 By using the default option, semicolons must be used any place where they are valid.
 
 ```json
-semi: [2, "always"]
+semi: ["error", "always"]
 ```
 
 The following patterns are considered problems:
 
 ```js
-/*eslint semi: 2*/
+/*eslint semi: "error"*/
 
 var name = "ESLint"
 
@@ -88,7 +88,7 @@ object.method = function() {
 The following patterns are not considered problems:
 
 ```js
-/*eslint semi: 2*/
+/*eslint semi: "error"*/
 
 var name = "ESLint";
 
@@ -102,13 +102,13 @@ object.method = function() {
 When setting the first option as "always", an additional option can be added to omit the last semicolon in a one-line block, that is, a block in which its braces (and therefore the content of the block) are in the same line:
 
 ```json
-semi: [2, "always", { "omitLastInOneLineBlock": true}]
+semi: ["error", "always", { "omitLastInOneLineBlock": true}]
 ```
 
 The following patterns are considered problems:
 
 ```js
-/*eslint semi: [2, "always", { "omitLastInOneLineBlock": true}] */
+/*eslint semi: ["error", "always", { "omitLastInOneLineBlock": true}] */
 
 if (foo) {
     bar()
@@ -120,7 +120,7 @@ if (foo) { bar(); }
 The following patterns are not considered problems:
 
 ```js
-/*eslint semi: [2, "always", { "omitLastInOneLineBlock": true}] */
+/*eslint semi: ["error", "always", { "omitLastInOneLineBlock": true}] */
 
 if (foo) { bar() }
 
@@ -138,7 +138,7 @@ semi: [2, "never"]
 Then, the following patterns are considered problems:
 
 ```js
-/*eslint semi: [2, "never"]*/
+/*eslint semi: ["error", "never"]*/
 
 var name = "ESLint";
 
@@ -150,7 +150,7 @@ object.method = function() {
 And the following patterns are not considered problems:
 
 ```js
-/*eslint semi: [2, "never"]*/
+/*eslint semi: ["error", "never"]*/
 
 var name = "ESLint"
 
@@ -162,7 +162,7 @@ object.method = function() {
 Even in `"never"` mode, semicolons are still allowed to disambiguate statements beginning with `[`, `(`, `/`, `+`, or `-`:
 
 ```js
-/*eslint semi: [2, "never"]*/
+/*eslint semi: ["error", "never"]*/
 
 var name = "ESLint"
 

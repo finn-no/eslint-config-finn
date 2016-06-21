@@ -1,66 +1,53 @@
-# Disallow or enforce spaces inside of single line blocks. (block-spacing)
+# Disallow or enforce spaces inside of single line blocks (block-spacing)
 
-This rule is for spacing style within single line blocks.
-
-**Fixable:** This rule is automatically fixable using the `--fix` flag on the command line.
+(fixable) The `--fix` option on the [command line](../user-guide/command-line-interface#fix) automatically fixes problems reported by this rule.
 
 ## Rule Details
 
-This rule is aimed to flag usage of spacing inside of blocks.
+This rule enforces consistent spacing inside single-line blocks.
 
 ## Options
 
-This rule has a option, its value is `"always"` or `"never"`.
+This rule has a string option:
 
-- `"always"` (by default) enforces one or more spaces.
-- `"never"` disallows space(s).
+* `"always"` (default) requires one or more spaces
+* `"never"` disallows spaces
 
-### "always"
+### always
 
-```json
-{
-  "block-spacing": [2, "always"]
-}
-```
-
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule with the default `"always"` option:
 
 ```js
-/*eslint block-spacing: 2*/
+/*eslint block-spacing: "error"*/
+
 function foo() {return true;}
 if (foo) { bar = 0;}
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule with the default `"always"` option:
 
 ```js
-/*eslint block-spacing: 2*/
+/*eslint block-spacing: "error"*/
 
 function foo() { return true; }
 if (foo) { bar = 0; }
 ```
 
-### "never"
+### never
 
-```json
-{
-  "block-spacing": [2, "never"]
-}
-```
-
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule with the `"never"` option:
 
 ```js
-/*eslint block-spacing: [2, "never"]*/
+/*eslint block-spacing: ["error", "never"]*/
 
 function foo() { return true; }
 if (foo) { bar = 0;}
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule with the `"never"` option:
 
 ```js
-/*eslint block-spacing: [2, "never"]*/
+/*eslint block-spacing: ["error", "never"]*/
 
 function foo() {return true;}
 if (foo) {bar = 0;}

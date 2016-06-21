@@ -9,17 +9,17 @@ Any reference to an undeclared variable causes a warning, unless the variable is
 Examples of **incorrect** code for this rule:
 
 ```js
-/*eslint no-undef: 2*/
+/*eslint no-undef: "error"*/
 
 var a = someFunction();
 b = 10;
 ```
 
-Examples of **correct** code with `global` declaration for this rule:
+Examples of **correct** code for this rule with `global` declaration:
 
 ```js
 /*global someFunction b:true*/
-/*eslint no-undef: 2*/
+/*eslint no-undef: "error"*/
 
 var a = someFunction();
 b = 10;
@@ -27,11 +27,11 @@ b = 10;
 
 The `b:true` syntax in `/*global */` indicates that assignment to `b` is correct.
 
-Examples of **incorrect** code with `global` declaration for this rule:
+Examples of **incorrect** code for this rule with `global` declaration:
 
 ```js
 /*global b*/
-/*eslint no-undef: 2*/
+/*eslint no-undef: "error"*/
 
 b = 10;
 ```
@@ -44,10 +44,10 @@ By default, variables declared in `/*global */` are read-only, therefore assignm
 
 ### typeof
 
-Examples of **correct** code for the default option:
+Examples of **correct** code for the default `{ "typeof": false }` option:
 
 ```js
-/*eslint no-undef: 2*/
+/*eslint no-undef: "error"*/
 
 if (typeof UndefinedIdentifier === "undefined") {
     // do something ...
@@ -59,16 +59,16 @@ You can use this option if you want to prevent `typeof` check on a variable whic
 Examples of **incorrect** code for the `{ "typeof": true }` option:
 
 ```js
-/*eslint no-undef: [2, { "typeof": true }] */
+/*eslint no-undef: ["error", { "typeof": true }] */
 
 if(typeof a === "string"){}
 ```
 
-Examples of **correct** code for the `{ "typeof": true }` option:
+Examples of **correct** code for the `{ "typeof": true }` option with `global` declaration:
 
 ```js
 /*global a*/
-/*eslint no-undef: [2, { "typeof": true }] */
+/*eslint no-undef: ["error", { "typeof": true }] */
 
 if(typeof a === "string"){}
 ```
@@ -79,9 +79,10 @@ For convenience, ESLint provides shortcuts that pre-define global variables expo
 
 ### browser
 
-Defines common browser globals.
+Examples of **correct** code for this rule with `browser` environment:
 
 ```js
+/*eslint no-undef: "error"*/
 /*eslint-env browser*/
 
 setTimeout(function() {
@@ -91,9 +92,10 @@ setTimeout(function() {
 
 ### node
 
-Defines globals for Node.js development.
+Examples of **correct** code for this rule with `node` environment:
 
 ```js
+/*eslint no-undef: "error"*/
 /*eslint-env node*/
 
 var fs = require("fs");

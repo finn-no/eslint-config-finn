@@ -56,13 +56,13 @@ You can configure the rule as follows:
 Exactly one declarator per declaration per function (var) or block (let or const)
 
 ```json
-"one-var": [2, "never"]
+"one-var": ["error", "never"]
 ```
 
 Configure each declaration type individually. Defaults to `"always"` if key not present.
 
 ```json
-"one-var": [2, {
+"one-var": ["error", {
     "var": "always", // Exactly one var declaration per function
     "let": "always", // Exactly one let declaration per block
     "const": "never" // Exactly one declarator per const declaration per block
@@ -81,7 +81,7 @@ Configure uninitialized and initialized seperately. Defaults to `"always"` if ke
 When configured with `"always"` as the first option (the default), the following patterns are considered problems:
 
 ```js
-/*eslint one-var: [2, "always"]*/
+/*eslint one-var: ["error", "always"]*/
 /*eslint-env es6*/
 
 function foo() {
@@ -110,7 +110,7 @@ function foo() {
 The following patterns are not considered problems:
 
 ```js
-/*eslint one-var: [2, "always"]*/
+/*eslint one-var: ["error", "always"]*/
 /*eslint-env es6*/
 
 function foo() {
@@ -148,7 +148,7 @@ function foo(){
 When configured with `"never"` as the first option, the following patterns are considered problems:
 
 ```js
-/*eslint one-var: [2, "never"]*/
+/*eslint one-var: ["error", "never"]*/
 /*eslint-env es6*/
 
 function foo() {
@@ -176,7 +176,7 @@ function foo(){
 The following patterns are not considered problems:
 
 ```js
-/*eslint one-var: [2, "never"]*/
+/*eslint one-var: ["error", "never"]*/
 /*eslint-env es6*/
 
 function foo() {
@@ -203,10 +203,12 @@ function foo() {
 
 When configured with an object as the first option, you can individually control how `var`, `let`, and `const` are handled, or alternatively how `uninitialized` and `initialized` variables are handled (which if used will override `var`, `let`, and `const`).
 
+**Note:** A variable declared in a for-in or for-of loop will not be flagged with the option `{ uninitialized: "always" }`, as this value is determined by the loop.
+
 The following patterns are not considered problems:
 
 ```js
-/*eslint one-var: [2, { var: "always", let: "never", const: "never" }]*/
+/*eslint one-var: ["error", { var: "always", let: "never", const: "never" }]*/
 /*eslint-env es6*/
 
 function foo() {
@@ -227,19 +229,29 @@ function foo() {
 The following patterns are not considered problems:
 
 ```js
-/*eslint one-var: [2, { uninitialized: "always", initialized: "never" }]*/
+/*eslint one-var: ["error", { uninitialized: "always", initialized: "never" }]*/
 
 function foo() {
     var a, b, c;
     var foo = true;
     var bar = false;
 }
+
+let x, y;
+for (let z of foo) {
+    doSomething(z);
+}
+
+let x, y, z;
+for (z of foo) {
+    doSomething(z);
+}
 ```
 
 If you are configuring the rule with an object, by default, if you didn't specify declaration type it will not be checked. So the following pattern is not considered a warning when options are set to: `{ var: "always", let: "always" }`
 
 ```js
-/*eslint one-var: [2, { var: "always", let: "always" }]*/
+/*eslint one-var: ["error", { var: "always", let: "always" }]*/
 /*eslint-env es6*/
 
 function foo() {
@@ -253,8 +265,8 @@ function foo() {
 
 ## Compatibility
 
-* **JSHint** - This rule maps to the `onevar` JSHint rule, but allows `let` and `const` to be configured separately.
-* **JSCS** - This rule roughly maps to `"disallowMultipleVarDecl"`
+* **JSHint**: This rule maps to the `onevar` JSHint rule, but allows `let` and `const` to be configured separately.
+* **JSCS**: This rule roughly maps to [disallowMultipleVarDecl](http://jscs.info/rule/disallowMultipleVarDecl)
 
 ## Further Reading
 

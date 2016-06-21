@@ -2,28 +2,16 @@
 
 Assignment to variables declared as function parameters can be misleading and lead to confusing behavior, as modifying function parameters will also mutate the `arguments` object. Often, assignment to function parameters is unintended and indicative of a mistake or programmer error.
 
+This rule can be also configured to fail when function parameters are modified. Side effects on parameters can cause counter-intuitive execution flow and make errors difficult to track down.
+
 ## Rule Details
 
-This rule aims to prevent unintended behavior caused by overwriting function parameters.
+This rule aims to prevent unintended behavior caused by modification or reassignment of function parameters.
 
-## Options
-
-This rule takes one option, an object, with a property `"props"`.
-
-```json
-{
-    "no-param-reassign": [2, {"props": false}]
-}
-```
-
-### `props`
-
-It is `false` by default. If it is `true` is set, this rule warns modifying of properties of parameters.
-
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule:
 
 ```js
-/*eslint no-param-reassign: 2*/
+/*eslint no-param-reassign: "error"*/
 
 function foo(bar) {
     bar = 13;
@@ -34,10 +22,26 @@ function foo(bar) {
 }
 ```
 
-When `{"props": true}`:
+Examples of **correct** code for this rule:
 
 ```js
-/*eslint no-param-reassign: [2, { "props": true }]*/
+/*eslint no-param-reassign: "error"*/
+
+function foo(bar) {
+    var baz = bar;
+}
+```
+
+## Options
+
+This rule takes one option, an object, with a boolean property `"props"`. It is `false` by default. If it is set to `true`, this rule warns against the modification of parameter properties.
+
+### props
+
+Examples of **correct** code for the default `{ "props": false }` option:
+
+```js
+/*eslint no-param-reassign: ["error", { "props": false }]*/
 
 function foo(bar) {
     bar.prop = "value";
@@ -52,20 +56,10 @@ function foo(bar) {
 }
 ```
 
-The following patterns are not considered problems:
+Examples of **incorrect** code for the `{ "props": true }` option:
 
 ```js
-/*eslint no-param-reassign: 2*/
-
-function foo(a) {
-    var b = a;
-}
-```
-
-When `{"props": false}`:
-
-```js
-/*eslint no-param-reassign: [2, { "props": false }]*/
+/*eslint no-param-reassign: ["error", { "props": true }]*/
 
 function foo(bar) {
     bar.prop = "value";

@@ -26,13 +26,13 @@ the expression instead.
 If a reference is inside of a dynamic expression (e.g. `CallExpression`,
 `YieldExpression`, ...), this rule ignores it.
 
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule:
 
 ```js
 while (node) {
     doSomething(node);
 }
-node = other.
+node = other;
 
 for (var j = 0; j < items.length; ++i) {
     doSomething(items[j]);
@@ -43,7 +43,7 @@ while (node !== root) {
 }
 ```
 
-The following patterns are considered not problems:
+Examples of **correct** code for this rule:
 
 ```js
 while (node) {

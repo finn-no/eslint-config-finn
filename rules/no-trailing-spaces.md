@@ -1,15 +1,15 @@
 # Disallow trailing spaces at the end of lines (no-trailing-spaces)
 
-Sometimes in the course of editing files, you can end up with extra whitespace at the end of lines. These whitespace differences can be picked up by source control systems and flagged as diffs, causing frustration for developers. While this extra whitespace causes no functional issues, many code conventions require that trailing spaces be removed before checkin.
+(fixable) The `--fix` option on the [command line](../user-guide/command-line-interface#fix) automatically fixes problems reported by this rule.
 
-**Fixable:** This rule is automatically fixable using the `--fix` flag on the command line.
+Sometimes in the course of editing files, you can end up with extra whitespace at the end of lines. These whitespace differences can be picked up by source control systems and flagged as diffs, causing frustration for developers. While this extra whitespace causes no functional issues, many code conventions require that trailing spaces be removed before checkin.
 
 ## Rule Details
 
 The following patterns are considered problems:
 
 ```js
-/*eslint no-trailing-spaces: 2*/
+/*eslint no-trailing-spaces: "error"*/
 
 // spaces, tabs and unicode whitespaces
 // are not allowed at the end of lines
@@ -20,7 +20,7 @@ var baz = 5;//••
 The following patterns are not considered problems:
 
 ```js
-/*eslint no-trailing-spaces: 2*/
+/*eslint no-trailing-spaces: "error"*/
 
 var foo = 0;
 
@@ -35,14 +35,14 @@ You can enable this option in your config like this:
 
 ```json
 {
-    "no-trailing-spaces": [2, { "skipBlankLines": true }]
+    "no-trailing-spaces": ["error", { "skipBlankLines": true }]
 }
 ```
 
 With this option enabled, The following patterns are not considered problems:
 
 ```js
-/*eslint no-trailing-spaces: [2, { "skipBlankLines": true }]*/
+/*eslint no-trailing-spaces: ["error", { "skipBlankLines": true }]*/
 
 var foo = 0;
 //••••

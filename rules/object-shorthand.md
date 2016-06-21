@@ -38,19 +38,20 @@ var foo = {
 ## Rule Details
 
 This rule enforces the use of the shorthand syntax. This applies
-to all methods (including generators) defined on object literals and any
+to all methods (including generators) defined in object literals and any
 properties defined where the key name matches name of the assigned variable.
 
 Each of the following properties would warn:
 
 
 ```js
-/*eslint object-shorthand: 2*/
+/*eslint object-shorthand: "error"*/
 /*eslint-env es6*/
 
 var foo = {
-    x: function() {},
-    y: function *() {},
+    w: function() {},
+    x: function *() {},
+    [y]: function() {},
     z: z
 };
 ```
@@ -58,12 +59,13 @@ var foo = {
 In that case the expected syntax would have been:
 
 ```js
-/*eslint object-shorthand: 2*/
+/*eslint object-shorthand: "error"*/
 /*eslint-env es6*/
 
 var foo = {
-    x() {},
-    *y() {},
+    w() {},
+    *x() {},
+    [y]() {},
     z
 };
 ```
@@ -72,7 +74,7 @@ This rule does not flag arrow functions inside of object literals.
 The following will *not* warn:
 
 ```js
-/*eslint object-shorthand: 2*/
+/*eslint object-shorthand: "error"*/
 /*eslint-env es6*/
 
 var foo = {
@@ -94,22 +96,53 @@ You can set the option in configuration like this:
 
 ```json
 {
-    "object-shorthand": [2, "always"]
+    "object-shorthand": ["error", "always"]
 }
+```
+
+While set to `"always"`, `"methods"`, or `"properties"`, shorthand syntax using string literal keys can be ignored using the optional parameter `"avoidQuotes"`. This will make it so longform syntax is preferred whenever the object key is a string literal. Note: The first parameter must be specified when using this optional parameter.
+
+```json
+{
+    "object-shorthand": ["error", "always", { "avoidQuotes": true }]
+}
+```
+
+Examples of **incorrect** code for this rule with the `"avoidQuotes"` option:
+
+```js
+/*eslint object-shorthand: ["error", "always", { "avoidQuotes": true }]*/
+/*eslint-env es6*/
+
+var foo = {
+    "bar-baz"() {}
+};
+```
+
+Examples of **correct** code for this rule with the `"avoidQuotes"` option:
+
+```js
+/*eslint object-shorthand: ["error", "always", { "avoidQuotes": true }]*/
+/*eslint-env es6*/
+
+var foo = {
+    "bar-baz": function() {},
+    "qux": qux
+};
 ```
 
 While set to `"always"` or `"methods"`, constructor functions can be ignored with the optional parameter `"ignoreConstructors"` enabled. Note: The first parameter must be specified when using this optional parameter.
 
 ```json
 {
-    "object-shorthand": [2, "always", { "ignoreConstructors": true }]
+    "object-shorthand": ["error", "always", { "ignoreConstructors": true }]
 }
 ```
 
 The following will *not* warn when `"ignoreConstructors"` is enabled:
 
 ```js
-/*eslint object-shorthand: [2, "always", { "ignoreConstructors": true }]*/
+/*eslint object-shorthand: ["error", "always", { "ignoreConstructors": true }]*/
 /*eslint-env es6*/
 
 var foo = {
