@@ -47,5 +47,6 @@ module.exports = {
         'quote-props': [ERR, 'consistent-as-needed'],
         'no-negated-condition': ERR,
         'quotes': [ERR, 'single', { avoidEscape: true }],
+        'max-depth': [ERR],
     },
 };
