@@ -540,6 +540,7 @@ Error level: Error
 
 ### Current options
   * single
+  * avoidEscape = true
 
 ## [semi](http://eslint.org/docs/rules/semi)
 Enforce or Disallow Semicolons (semi)
@@ -563,57 +564,6 @@ Error level: Error
   * always
   * exceptions = eslint-disable,global,eslint,eslint-env
 
-## [comma-dangle](http://eslint.org/docs/rules/comma-dangle)
-require or disallow trailing commas (comma-dangle)
-Error level: Error
-
-### Available options
-* `"never"` (default) disallows trailing commas
-* `"always"` requires trailing commas
-* `"always-multiline"` requires trailing commas when the last element or property is in a *different* line than the closing `]` or `}` and disallows trailing commas when the last element or property is on the *same* line as the closing `]` or `}`
-* `"only-multiline"` allows (but does not require) trailing commas when the last element or property is in a *different* line than the closing `]` or `}` and disallows trailing commas when the last element or property is on the *same* line as the closing `]` or `}`
-
-### Current options
-  * always-multiline
-
-## [computed-property-spacing](http://eslint.org/docs/rules/computed-property-spacing)
-Disallow or enforce spaces inside of computed properties (computed-property-spacing)
-Error level: Error
-
-### Available options
-* `"never"` (default) disallows spaces inside computed property brackets
-* `"always"` requires one or more spaces inside computed property brackets
-
-
-## [no-case-declarations](http://eslint.org/docs/rules/no-case-declarations)
-Disallow lexical declarations in case/default clauses (no-case-declarations)
-Error level: Error
-
-
-## [no-class-assign](http://eslint.org/docs/rules/no-class-assign)
-Disallow modifying variables of class declarations (no-class-assign)
-Error level: Error
-
-
-## [no-cond-assign](http://eslint.org/docs/rules/no-cond-assign)
-disallow assignment operators in conditional statements (no-cond-assign)
-Error level: Error
-
-### Available options
-* `"except-parens"` (default) allows assignments in test conditions *only if* they are enclosed in parentheses (for example, to allow reassigning a variable in the test of a `while` or `do...while` loop)
-* `"always"` disallows all assignments in test conditions
-
-### Current options
-  * always
-
-## [no-console](http://eslint.org/docs/rules/no-console)
-disallow the use of `console` (no-console)
-Error level: Error
-
-### Available options
-* `"allow"` has an array of strings which are allowed methods of the `console` object
-
-
 ## [array-bracket-spacing](http://eslint.org/docs/rules/array-bracket-spacing)
 Disallow or enforce spaces inside of brackets (array-bracket-spacing)
 Error level: Error
@@ -629,6 +579,11 @@ Error level: Error
 * `"arraysInArrays": false` disallows spaces between brackets of array literals and brackets of their array literal elements `[[` or `]]`
 * `"never"` (and also the exceptions to the `"always"` option) allows newlines inside array brackets, because this is a common pattern
 * `"always"` does not require spaces or newlines in empty array literals `[]`
+
+
+## [array-callback-return](http://eslint.org/docs/rules/array-callback-return)
+Enforces return statements in callbacks of array's methods (array-callback-return)
+Error level: Error
 
 
 ## [arrow-body-style](http://eslint.org/docs/rules/arrow-body-style)
@@ -657,112 +612,34 @@ Error level: Error
 * `"never"` disallows spaces
 
 
-## [no-debugger](http://eslint.org/docs/rules/no-debugger)
-disallow the use of `debugger` (no-debugger)
-Error level: Error
-
-
-## [no-trailing-spaces](http://eslint.org/docs/rules/no-trailing-spaces)
-Disallow trailing spaces at the end of lines (no-trailing-spaces)
-Error level: Error
-
-
-## [no-useless-call](http://eslint.org/docs/rules/no-useless-call)
-Disallow unnecessary `.call()` and `.apply()`. (no-useless-call)
-Error level: Error
-
-
-## [no-duplicate-imports](http://eslint.org/docs/rules/no-duplicate-imports)
-Disallow duplicate imports (no-duplicate-imports)
-Error level: Error
-
-
-## [no-shadow-restricted-names](http://eslint.org/docs/rules/no-shadow-restricted-names)
-Disallow Shadowing of Restricted Names (no-shadow-restricted-names)
-Error level: Error
-
-
-## [prefer-spread](http://eslint.org/docs/rules/prefer-spread)
-Suggest using the spread operator instead of `.apply()`. (prefer-spread)
-Error level: Error
-
-
-## [yoda](http://eslint.org/docs/rules/yoda)
-Require or disallow Yoda Conditions (yoda)
+## [comma-dangle](http://eslint.org/docs/rules/comma-dangle)
+require or disallow trailing commas (comma-dangle)
 Error level: Error
 
 ### Available options
-* If it is the default `"never"`, then comparisons must never be Yoda conditions.
-* If it is `"always"`, then the literal value must always come first.
-* If the `"exceptRange"` property is `true`, the rule *allows* yoda conditions in range comparisons which are wrapped directly in parentheses, including the parentheses of an `if` or `while` condition. The default value is `false`. A *range* comparison tests whether a variable is inside or outside the range between two literal values.
-* If the `"onlyEquality"` property is `true`, the rule reports yoda conditions *only* for the equality operators `==` and `===`. The default value is `false`.
-
-
-## [array-callback-return](http://eslint.org/docs/rules/array-callback-return)
-Enforces return statements in callbacks of array's methods (array-callback-return)
-Error level: Error
-
-
-## [no-negated-in-lhs](http://eslint.org/docs/rules/no-negated-in-lhs)
-disallow negating the left operand in `in` expressions (no-negated-in-lhs)
-Error level: Error
-
-
-## [prefer-template](http://eslint.org/docs/rules/prefer-template)
-Suggest using template literals instead of string concatenation. (prefer-template)
-Error level: Error
-
-
-## [one-var](http://eslint.org/docs/rules/one-var)
-Require or Disallow One Variable Declaration per Scope (one-var)
-Error level: Error
-
-### Available options
-* `var`
-* `let`
-* `const`
-* `uninitialized`
-* `initialized`
+* `"never"` (default) disallows trailing commas
+* `"always"` requires trailing commas
+* `"always-multiline"` requires trailing commas when the last element or property is in a *different* line than the closing `]` or `}` and disallows trailing commas when the last element or property is on the *same* line as the closing `]` or `}`
+* `"only-multiline"` allows (but does not require) trailing commas when the last element or property is in a *different* line than the closing `]` or `}` and disallows trailing commas when the last element or property is on the *same* line as the closing `]` or `}`
 
 ### Current options
-  * never
+  * always-multiline
 
-## [no-spaced-func](http://eslint.org/docs/rules/no-spaced-func)
-disallow spacing between `function` identifiers and their applications (no-spaced-func)
-Error level: Error
-
-
-## [space-infix-ops](http://eslint.org/docs/rules/space-infix-ops)
-Require Spaces Around Infix Operators (space-infix-ops)
-Error level: Error
-
-
-## [template-curly-spacing](http://eslint.org/docs/rules/template-curly-spacing)
-Enforce Usage of Spacing in Template Strings (template-curly-spacing)
+## [computed-property-spacing](http://eslint.org/docs/rules/computed-property-spacing)
+Disallow or enforce spaces inside of computed properties (computed-property-spacing)
 Error level: Error
 
 ### Available options
-* `"never"` (by default) - Disallows spaces inside of the curly brace pair.
-* `"always"` - Requires one or more spaces inside of the curly brace pair.
+* `"never"` (default) disallows spaces inside computed property brackets
+* `"always"` requires one or more spaces inside computed property brackets
 
 
-## [space-unary-ops](http://eslint.org/docs/rules/space-unary-ops)
-Require or disallow spaces before/after unary operators (space-unary-ops)
+## [max-depth](http://eslint.org/docs/rules/max-depth)
+enforce a maximum depth that blocks can be nested (max-depth)
 Error level: Error
 
 ### Available options
-* `words` - applies to unary word operators such as: `new`, `delete`, `typeof`, `void`, `yield`
-* `nonwords` - applies to unary operators such as: `-`, `+`, `--`, `++`, `!`, `!!`
-* `overrides` - specifies overwriting usage of spacing for each operator, word or non word. This is empty by default, but can be used to enforce or disallow spacing around operators. For example:
-
-
-## [no-confusing-arrow](http://eslint.org/docs/rules/no-confusing-arrow)
-Disallow arrow functions where they could be confused with comparisons (no-confusing-arrow)
-Error level: Error
-
-### Available options
-* `true` relaxes the rule and accepts parenthesis as a valid "confusion-preventing" syntax.
-* `false` warns even if the expression is wrapped in parenthesis
+* `"max"` (default `4`) enforces a maximum depth that blocks can be nested
 
 
 ## [max-len](http://eslint.org/docs/rules/max-len)
@@ -793,16 +670,157 @@ Error level: Error
 ### Current options
   * 5
 
+## [no-case-declarations](http://eslint.org/docs/rules/no-case-declarations)
+Disallow lexical declarations in case/default clauses (no-case-declarations)
+Error level: Error
+
+
+## [no-class-assign](http://eslint.org/docs/rules/no-class-assign)
+Disallow modifying variables of class declarations (no-class-assign)
+Error level: Error
+
+
+## [no-cond-assign](http://eslint.org/docs/rules/no-cond-assign)
+disallow assignment operators in conditional statements (no-cond-assign)
+Error level: Error
+
+### Available options
+* `"except-parens"` (default) allows assignments in test conditions *only if* they are enclosed in parentheses (for example, to allow reassigning a variable in the test of a `while` or `do...while` loop)
+* `"always"` disallows all assignments in test conditions
+
+### Current options
+  * always
+
+## [no-confusing-arrow](http://eslint.org/docs/rules/no-confusing-arrow)
+Disallow arrow functions where they could be confused with comparisons (no-confusing-arrow)
+Error level: Error
+
+### Available options
+* `true` relaxes the rule and accepts parenthesis as a valid "confusion-preventing" syntax.
+* `false` warns even if the expression is wrapped in parenthesis
+
+
+## [no-console](http://eslint.org/docs/rules/no-console)
+disallow the use of `console` (no-console)
+Error level: Error
+
+### Available options
+* `"allow"` has an array of strings which are allowed methods of the `console` object
+
+
+## [no-debugger](http://eslint.org/docs/rules/no-debugger)
+disallow the use of `debugger` (no-debugger)
+Error level: Error
+
+
+## [no-duplicate-imports](http://eslint.org/docs/rules/no-duplicate-imports)
+Disallow duplicate imports (no-duplicate-imports)
+Error level: Error
+
+
+## [no-negated-condition](http://eslint.org/docs/rules/no-negated-condition)
+disallow negated conditions (no-negated-condition)
+Error level: Error
+
+
+## [no-negated-in-lhs](http://eslint.org/docs/rules/no-negated-in-lhs)
+disallow negating the left operand in `in` expressions (no-negated-in-lhs)
+Error level: Error
+
+
+## [no-shadow-restricted-names](http://eslint.org/docs/rules/no-shadow-restricted-names)
+Disallow Shadowing of Restricted Names (no-shadow-restricted-names)
+Error level: Error
+
+
+## [no-spaced-func](http://eslint.org/docs/rules/no-spaced-func)
+disallow spacing between `function` identifiers and their applications (no-spaced-func)
+Error level: Error
+
+
+## [no-trailing-spaces](http://eslint.org/docs/rules/no-trailing-spaces)
+Disallow trailing spaces at the end of lines (no-trailing-spaces)
+Error level: Error
+
+
+## [no-useless-call](http://eslint.org/docs/rules/no-useless-call)
+Disallow unnecessary `.call()` and `.apply()`. (no-useless-call)
+Error level: Error
+
+
+## [no-useless-escape](http://eslint.org/docs/rules/no-useless-escape)
+Disallow unnecessary escape usage (no-useless-escape)
+Error level: Error
+
+
+## [one-var](http://eslint.org/docs/rules/one-var)
+Require or Disallow One Variable Declaration per Scope (one-var)
+Error level: Error
+
+### Available options
+* `var`
+* `let`
+* `const`
+* `uninitialized`
+* `initialized`
+
+### Current options
+  * never
+
+## [prefer-spread](http://eslint.org/docs/rules/prefer-spread)
+Suggest using the spread operator instead of `.apply()`. (prefer-spread)
+Error level: Error
+
+
+## [prefer-template](http://eslint.org/docs/rules/prefer-template)
+Suggest using template literals instead of string concatenation. (prefer-template)
+Error level: Error
+
+
+## [quote-props](http://eslint.org/docs/rules/quote-props)
+Quoting Style for Property Names (quote-props)
+Error level: Error
+
+### Current options
+  * consistent-as-needed
+
 ## [space-before-function-paren](http://eslint.org/docs/rules/space-before-function-paren)
 Require or disallow a space before function parenthesis (space-before-function-paren)
 Error level: Error
 
 
-## [max-depth](http://eslint.org/docs/rules/max-depth)
-enforce a maximum depth that blocks can be nested (max-depth)
+## [space-infix-ops](http://eslint.org/docs/rules/space-infix-ops)
+Require Spaces Around Infix Operators (space-infix-ops)
+Error level: Error
+
+
+## [space-unary-ops](http://eslint.org/docs/rules/space-unary-ops)
+Require or disallow spaces before/after unary operators (space-unary-ops)
 Error level: Error
 
 ### Available options
-* `"max"` (default `4`) enforces a maximum depth that blocks can be nested
+* `words` - applies to unary word operators such as: `new`, `delete`, `typeof`, `void`, `yield`
+* `nonwords` - applies to unary operators such as: `-`, `+`, `--`, `++`, `!`, `!!`
+* `overrides` - specifies overwriting usage of spacing for each operator, word or non word. This is empty by default, but can be used to enforce or disallow spacing around operators. For example:
+
+
+## [template-curly-spacing](http://eslint.org/docs/rules/template-curly-spacing)
+Enforce Usage of Spacing in Template Strings (template-curly-spacing)
+Error level: Error
+
+### Available options
+* `"never"` (by default) - Disallows spaces inside of the curly brace pair.
+* `"always"` - Requires one or more spaces inside of the curly brace pair.
+
+
+## [yoda](http://eslint.org/docs/rules/yoda)
+Require or disallow Yoda Conditions (yoda)
+Error level: Error
+
+### Available options
+* If it is the default `"never"`, then comparisons must never be Yoda conditions.
+* If it is `"always"`, then the literal value must always come first.
+* If the `"exceptRange"` property is `true`, the rule *allows* yoda conditions in range comparisons which are wrapped directly in parentheses, including the parentheses of an `if` or `while` condition. The default value is `false`. A *range* comparison tests whether a variable is inside or outside the range between two literal values.
+* If the `"onlyEquality"` property is `true`, the rule reports yoda conditions *only* for the equality operators `==` and `===`. The default value is `false`.
 
 
