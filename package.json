@@ -39,5 +39,6 @@
   },
   "dependencies": {
     "eslint-config-spt": "^2.0.0"
-  }
+  },
+  "license": "MIT"
 }
