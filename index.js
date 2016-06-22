@@ -23,7 +23,7 @@ module.exports = {
         'no-case-declarations': ERR,
         'no-class-assign': ERR,
         'no-cond-assign': [ERR, 'always'],
-        'no-confusing-arrow': ERR,
+        'no-confusing-arrow': [ERR, { allowParens: true }],
         'no-console': ERR,
         'no-debugger': ERR,
         'no-duplicate-imports': ERR,
