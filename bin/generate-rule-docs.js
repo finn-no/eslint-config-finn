@@ -92,7 +92,8 @@ async.map(enabledRules.map(ruleToFile), fs.readFile, function (err, results) {
             config: rules[name],
             doc,
         };
-    }).map(relevantRuleDoc)
+    })
+    .map(relevantRuleDoc)
     .forEach((rule) => {
         console.log(`## [${rule.name}](http://eslint.org/docs/rules/${rule.name})`);
         console.log(`${rule.generated.heading}`);
