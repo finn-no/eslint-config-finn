@@ -20,6 +20,7 @@ module.exports = {
         'max-depth': [ERR],
         'max-len': [ERR, { code: 140, ignoreTrailingComments: true, ignoreUrls: true }],
         'max-params': [ERR, 5],
+        'newline-per-chained-call': ERR,
         'no-case-declarations': ERR,
         'no-class-assign': ERR,
         'no-cond-assign': [ERR, 'always'],
@@ -48,6 +49,5 @@ module.exports = {
         'template-curly-spacing': ERR,
         'vars-on-top': OFF,
         'yoda': ERR,
-        'newline-per-chained-call': ERR,
     },
 };
