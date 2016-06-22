@@ -48,5 +48,6 @@ module.exports = {
         'template-curly-spacing': ERR,
         'vars-on-top': OFF,
         'yoda': ERR,
+        'newline-per-chained-call': ERR,
     },
 };
