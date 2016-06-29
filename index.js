@@ -28,6 +28,7 @@ module.exports = {
         'no-console': ERR,
         'no-debugger': ERR,
         'no-duplicate-imports': ERR,
+        'no-else-return': OFF,
         'no-eq-null': OFF,
         'no-negated-condition': ERR,
         'no-negated-in-lhs': ERR,
