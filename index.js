@@ -31,6 +31,7 @@ module.exports = {
         'no-eq-null': OFF,
         'no-negated-condition': ERR,
         'no-negated-in-lhs': ERR,
+        'no-shadow': [ERR, { builtinGlobals: true, allow: ['resolve', 'reject', 'cb', 'err'] }],
         'no-shadow-restricted-names': ERR,
         'no-spaced-func': ERR,
         'no-trailing-spaces': ERR,
