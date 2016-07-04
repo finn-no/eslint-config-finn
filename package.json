@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-finn",
-  "version": "1.0.0-alpha.6",
+  "version": "1.0.0-alpha.7",
   "description": "ESLint config for FINN.no",
   "files": [
     "CHANGELOG.md",
