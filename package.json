@@ -33,8 +33,9 @@
   },
   "devDependencies": {
     "async": "^1.5.2",
-    "eslint": ">=2.0.0",
+    "eslint": "^2.0.0",
     "eslint-find-rules": "^1.10.0",
+    "eslint-plugin-react": "^4.3.0",
     "marked": "^0.3.5"
   },
   "dependencies": {
