@@ -41,6 +41,7 @@ module.exports = {
         'no-useless-call': ERR,
         'no-useless-escape': ERR,
         'one-var': [ERR, 'never'],
+        'prefer-const': ERR,
         'prefer-spread': ERR,
         'prefer-template': ERR,
         'quote-props': [ERR, 'consistent-as-needed'],
