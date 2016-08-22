@@ -1,8 +1,8 @@
 'use strict';
 module.exports = {
     extends: [
-        'spt/env-node',
-    ],
+        'eslint-config-spt/env-node',
+    ].map(require.resolve),
     rules: {
         'no-console': 0,
     },

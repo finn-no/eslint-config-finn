@@ -4,8 +4,8 @@ var ERR = 2;
 
 module.exports = {
     extends: [
-        'spt',
-    ],
+        'eslint-config-spt',
+    ].map(require.resolve),
 
     rules: {
         'array-bracket-spacing': ERR,
