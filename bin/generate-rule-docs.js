@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 
-const async = require('async');
+const asyncMap = require('async/map');
 const eslint = require('eslint');
 const fs = require('fs');
 const marked = require('marked');
@@ -79,7 +79,7 @@ function getRuleLevel (ruleConfig) {
 
 const enabledRules = Object.keys(rules).filter((ruleName) => getRuleLevel(rules[ruleName]));
 
-async.map(enabledRules.map(ruleToFile), fs.readFile, function (err, results) {
+asyncMap(enabledRules.map(ruleToFile), fs.readFile, function (err, results) {
     if (err) {
         console.error(err);
         return;

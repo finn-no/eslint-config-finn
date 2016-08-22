@@ -4,6 +4,14 @@
 Verify calls of `super()` in constructors (constructor-super)
 
 
+## [generator-star-spacing](http://eslint.org/docs/rules/generator-star-spacing)
+Enforce spacing around the * in generator functions (generator-star-spacing)
+
+
+## [generator-star](http://eslint.org/docs/rules/generator-star)
+generator-star: enforce consistent spacing around the asterisk in generator functions
+
+
 ## [no-this-before-super](http://eslint.org/docs/rules/no-this-before-super)
 Disallow use of `this`/`super` before calling `super()` in constructors. (no-this-before-super)
 
@@ -22,6 +30,14 @@ Require Object Literal Shorthand Syntax (object-shorthand)
 * `"never"` ensures that no property or method shorthand is used in any object literal.
 
 
+## [prefer-const](http://eslint.org/docs/rules/prefer-const)
+Suggest using `const` (prefer-const)
+
+### Available options
+* `"any"` (default) - If any variables in destructuring should be `const`, this rule warns for those variables.
+* `"all"` - If all variables in destructuring should be `const`, this rule warns the variables. Otherwise, ignores them.
+
+
 ## [strict](http://eslint.org/docs/rules/strict)
 require or disallow strict mode directives (strict)
 
@@ -36,6 +52,43 @@ require or disallow strict mode directives (strict)
 
 ### Current options
   * safe
+
+## [handle-callback-err](http://eslint.org/docs/rules/handle-callback-err)
+Enforce Callback Error Handling (handle-callback-err)
+
+### Available options
+* If the option is `"^(err|error|anySpecificError)$"`, the rule reports unhandled errors where the parameter name can be `err`, `error` or `anySpecificError`.
+* If the option is `"^.+Error$"`, the rule reports unhandled errors where the parameter name ends with `Error` (for example, `connectionError` or `validationError` will match).
+* If the option is `"^.*(e|E)rr"`, the rule reports unhandled errors where the parameter name matches any string that contains `err` or `Err` (for example, `err`, `error`, `anyError`, `some_err` will match).
+
+
+## [no-mixed-requires](http://eslint.org/docs/rules/no-mixed-requires)
+Disallow Mixed Requires (no-mixed-requires)
+
+
+## [no-new-require](http://eslint.org/docs/rules/no-new-require)
+Disallow new require (no-new-require)
+
+
+## [no-path-concat](http://eslint.org/docs/rules/no-path-concat)
+Disallow string concatenation when using `__dirname` and `__filename` (no-path-concat)
+
+
+## [no-process-exit](http://eslint.org/docs/rules/no-process-exit)
+Disallow process.exit() (no-process-exit)
+
+
+## [no-restricted-modules](http://eslint.org/docs/rules/no-restricted-modules)
+Disallow Node.js modules (no-restricted-modules)
+
+
+## [no-sync](http://eslint.org/docs/rules/no-sync)
+Disallow Synchronous Methods (no-sync)
+
+
+## [no-underscore-dangle](http://eslint.org/docs/rules/no-underscore-dangle)
+Disallow Dangling Underscores in Identifiers (no-underscore-dangle)
+
 
 ## [no-unexpected-multiline](http://eslint.org/docs/rules/no-unexpected-multiline)
 disallow confusing multiline expressions (no-unexpected-multiline)
@@ -103,12 +156,12 @@ Disallow Use of caller/callee (no-caller)
 Disallow Regexs That Look Like Division (no-div-regex)
 
 
-## [no-else-return](http://eslint.org/docs/rules/no-else-return)
-Disallow return before else (no-else-return)
-
-
 ## [no-eval](http://eslint.org/docs/rules/no-eval)
 Disallow eval() (no-eval)
+
+
+## [no-extend-native](http://eslint.org/docs/rules/no-extend-native)
+Disallow Extending of Native Objects (no-extend-native)
 
 
 ## [no-extra-bind](http://eslint.org/docs/rules/no-extra-bind)
@@ -150,6 +203,10 @@ Disallow Unnecessary Nested Blocks (no-lone-blocks)
 Disallow Functions in Loops (no-loop-func)
 
 
+## [no-multi-spaces](http://eslint.org/docs/rules/no-multi-spaces)
+Disallow multiple spaces (no-multi-spaces)
+
+
 ## [no-multi-str](http://eslint.org/docs/rules/no-multi-str)
 Disallow Multiline Strings (no-multi-str)
 
@@ -176,6 +233,14 @@ disallow octal escape sequences in string literals (no-octal-escape)
 
 ## [no-octal](http://eslint.org/docs/rules/no-octal)
 disallow octal literals (no-octal)
+
+
+## [no-param-reassign](http://eslint.org/docs/rules/no-param-reassign)
+Disallow Reassignment of Function Parameters (no-param-reassign)
+
+
+## [no-process-env](http://eslint.org/docs/rules/no-process-env)
+Disallow process.env (no-process-env)
 
 
 ## [no-proto](http://eslint.org/docs/rules/no-proto)
@@ -233,6 +298,10 @@ Require IIFEs to be Wrapped (wrap-iife)
 ### Current options
   * inside
 
+## [no-catch-shadow](http://eslint.org/docs/rules/no-catch-shadow)
+Disallow Shadowing of Variables Inside of catch (no-catch-shadow)
+
+
 ## [no-delete-var](http://eslint.org/docs/rules/no-delete-var)
 disallow deleting variables (no-delete-var)
 
@@ -245,6 +314,9 @@ Disallow Shadowing (no-shadow)
 * `all` - reports all shadowing before the outer variables/functions are defined.
 * `never` - never report shadowing before the outer variables/functions are defined.
 
+### Current options
+  * builtinGlobals = true
+  * allow = resolve,reject,cb,err
 
 ## [no-undef-init](http://eslint.org/docs/rules/no-undef-init)
 Disallow Initializing to undefined (no-undef-init)
@@ -345,6 +417,17 @@ Require file to end with single newline (eol-last)
 * `"unix"` (default) enforces line feed (LF) as newline
 * `"windows"` enforces carriage return line feed (CRLF) as newline
 
+
+## [func-style](http://eslint.org/docs/rules/func-style)
+enforce the consistent use of either `function` declarations or expressions (func-style)
+
+### Available options
+* `"expression"` (default) requires the use of function expressions instead of function declarations
+* `"declaration"` requires the use of function declarations instead of function expressions
+* `"allowArrowFunctions": true` (default `false`) allows the use of arrow functions
+
+### Current options
+  * declaration
 
 ## [indent](http://eslint.org/docs/rules/indent)
 enforce consistent indentation (indent)
@@ -491,6 +574,10 @@ Requires or disallows a whitespace (space or tab) beginning a comment (spaced-co
   * always
   * exceptions = eslint-disable,global,eslint,eslint-env
 
+## [global-strict](http://eslint.org/docs/rules/global-strict)
+global-strict: require or disallow strict mode directives in the global scope
+
+
 ## [array-bracket-spacing](http://eslint.org/docs/rules/array-bracket-spacing)
 Disallow or enforce spaces inside of brackets (array-bracket-spacing)
 
@@ -587,6 +674,13 @@ enforce a maximum number of parameters in `function` definitions (max-params)
 ### Current options
   * 5
 
+## [newline-per-chained-call](http://eslint.org/docs/rules/newline-per-chained-call)
+require a newline after each call in a method chain (newline-per-chained-call)
+
+### Available options
+* `"ignoreChainWithDepth"` (default: `2`) allows chains up to a specified depth.
+
+
 ## [no-case-declarations](http://eslint.org/docs/rules/no-case-declarations)
 Disallow lexical declarations in case/default clauses (no-case-declarations)
 
@@ -612,6 +706,8 @@ Disallow arrow functions where they could be confused with comparisons (no-confu
 * `true` relaxes the rule and accepts parenthesis as a valid "confusion-preventing" syntax.
 * `false` warns even if the expression is wrapped in parenthesis
 
+### Current options
+  * allowParens = true
 
 ## [no-console](http://eslint.org/docs/rules/no-console)
 disallow the use of `console` (no-console)
