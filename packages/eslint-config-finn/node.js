@@ -4,6 +4,6 @@ module.exports = {
         'eslint-config-spt/env-node',
     ].map(require.resolve),
     rules: {
-        'no-console': 0,
+        'no-console': 'off',
     },
 };
