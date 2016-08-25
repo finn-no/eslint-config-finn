@@ -3,13 +3,7 @@
   "version": "1.0.0-alpha.0",
   "description": "ESLint config for FINN.no's React projects",
   "files": [
-    "CHANGELOG.md",
-    "README.md",
-    "es-modules.js",
-    "es5.js",
-    "es6.js",
     "index.js",
-    "node.js",
     "react.js"
   ],
   "main": "index.js",
