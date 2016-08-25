@@ -1,5 +1,5 @@
 {
     "extends": [
-        "../es6.js"
+        "finn/es6"
     ]
 }

@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
     extends: [
-        'spt/env-react',
+        'eslint-config-spt-react',
     ],
     parserOptions: {
         ecmaFeatures: {

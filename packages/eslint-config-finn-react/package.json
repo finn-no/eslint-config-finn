@@ -1,0 +1,40 @@
+{
+  "name": "eslint-config-finn-react",
+  "version": "0.0.1",
+  "description": "ESLint config for FINN.no's React projects",
+  "files": [
+    "CHANGELOG.md",
+    "README.md",
+    "es-modules.js",
+    "es5.js",
+    "es6.js",
+    "index.js",
+    "node.js",
+    "react.js"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint ."
+  },
+  "keywords": [
+    "coding-standard",
+    "standards",
+    "eslint",
+    "eslintconfig",
+    "lint",
+    "react",
+    "style"
+  ],
+  "repository": "finn-no/eslint-config-finn",
+  "bugs": {
+    "url": "https://github.com/finn-no/eslint-config-finn/issues"
+  },
+  "devDependencies": {
+    "eslint": "^3.3.1",
+    "eslint-plugin-react": "^6.1.2"
+  },
+  "dependencies": {
+    "eslint-config-spt-react": "^3.0.0-beta-1"
+  },
+  "license": "MIT"
+}

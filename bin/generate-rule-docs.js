@@ -74,10 +74,22 @@ const config = new CLIEngine({
 const rules = config.rules;
 
 function getRuleLevel (ruleConfig) {
-    return (Array.isArray(ruleConfig) ? ruleConfig[0] : ruleConfig);
+    return Array.isArray(ruleConfig) ? ruleConfig[0] : ruleConfig;
 }
 
-const enabledRules = Object.keys(rules).filter((ruleName) => getRuleLevel(rules[ruleName]));
+const enabledRules = Object.keys(rules).filter(ruleName => {
+    const ruleLevel = getRuleLevel(rules[ruleName]);
+
+    if (!ruleLevel) {
+        return false;
+    }
+
+    if (typeof ruleLevel === 'string') {
+        return ruleLevel !== 'off';
+    }
+
+    return ruleLevel !== 0;
+});
 
 asyncMap(enabledRules.map(ruleToFile), fs.readFile, function (err, results) {
     if (err) {
