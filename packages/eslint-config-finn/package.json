@@ -8,8 +8,7 @@
     "es5.js",
     "es6.js",
     "index.js",
-    "node.js",
-    "react.js"
+    "node.js"
   ],
   "main": "index.js",
   "scripts": {
