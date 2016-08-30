@@ -18,7 +18,7 @@ function ruleToFile (ruleName) {
 function relevantRuleDoc (rule) {
     const lexer = new marked.Lexer();
     const tokens = lexer.lex(rule.doc);
-    let currentHeading = {
+    const currentHeading = {
         l1: '',
         l2: '',
         l3: '',

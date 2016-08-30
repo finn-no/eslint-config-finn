@@ -1,7 +1,6 @@
 {
     "extends": [
         "finn",
-        "finn/node",
-        "finn/es5"
+        "finn/node"
     ]
 }
