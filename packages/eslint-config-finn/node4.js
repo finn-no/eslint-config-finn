@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
     extends: [
-        'eslint-config-spt/env-es6-false',
+        './node',
     ].map(require.resolve),
     rules: {
         'prefer-arrow-callback': 'off',
