@@ -91,7 +91,7 @@ const enabledRules = Object.keys(rules).filter(ruleName => {
     return ruleLevel !== 0;
 });
 
-asyncMap(enabledRules.map(ruleToFile), fs.readFile, function (err, results) {
+asyncMap(enabledRules.map(ruleToFile), fs.readFile, (err, results) => {
     if (err) {
         console.error(err);
         return;

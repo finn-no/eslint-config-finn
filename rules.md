@@ -685,6 +685,16 @@ Require or Disallow One Variable Declaration per Scope (one-var)
 ### Current options
   * never
 
+## [prefer-arrow-callback](http://eslint.org/docs/rules/prefer-arrow-callback)
+Suggest using arrow functions as callbacks. (prefer-arrow-callback)
+
+### Current options
+  * allowNamedFunctions = true
+
+## [prefer-rest-params](http://eslint.org/docs/rules/prefer-rest-params)
+Suggest using the rest parameters instead of `arguments` (prefer-rest-params)
+
+
 ## [prefer-spread](http://eslint.org/docs/rules/prefer-spread)
 Suggest using the spread operator instead of `.apply()`. (prefer-spread)
 
