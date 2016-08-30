@@ -9,9 +9,6 @@ module.exports = {
         },
     },
     rules: {
-        'react/jsx-wrap-multilines': 'error',
-        'react/no-did-mount-set-state': 'error',
         'react/no-multi-comp': ['error', { ignoreStateless: true }],
-        'react/wrap-multilines': 'off',
     },
 };
