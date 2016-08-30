@@ -24,11 +24,11 @@
     "url": "https://github.com/finn-no/eslint-config-finn/issues"
   },
   "devDependencies": {
-    "eslint": "^3.3.1",
-    "eslint-plugin-react": "^6.1.2"
+    "eslint": "^3.4.0",
+    "eslint-plugin-react": "^6.2.0"
   },
   "dependencies": {
-    "eslint-config-spt-react": "^3.0.0-beta-1"
+    "eslint-config-spt-react": "^3.0.0-beta-2"
   },
   "license": "MIT"
 }
