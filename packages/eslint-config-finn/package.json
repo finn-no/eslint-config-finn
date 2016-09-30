@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-finn",
-  "version": "1.0.0-alpha.14",
+  "version": "1.0.0-beta.1",
   "description": "ESLint config for FINN.no",
   "files": [
     "README.md",
