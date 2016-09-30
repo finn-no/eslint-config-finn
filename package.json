@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "async": "^2.0.1",
-    "eslint": "^3.5.0",
+    "eslint": "^3.7.0",
     "eslint-find-rules": "^1.13.0",
     "marked": "^0.3.6"
   },
