@@ -15,6 +15,7 @@ module.exports = {
         'comma-dangle': ['error', 'always-multiline'],
         'computed-property-spacing': 'error',
         'eqeqeq': ['error', 'smart'],
+        'lines-around-directive': ['error', { before: 'never', after: 'always' }],
         'max-depth': ['error'],
         'max-len': ['error', { code: 140, ignoreTrailingComments: true, ignoreUrls: true }],
         'max-nested-callbacks': ['error', 5],
