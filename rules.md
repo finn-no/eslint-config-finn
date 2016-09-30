@@ -397,7 +397,7 @@ enforce a maximum depth that callbacks can be nested (max-nested-callbacks)
 * `"max"` (default `10`) enforces a maximum depth that callbacks can be nested
 
 ### Current options
-  * 3
+  * 5
 
 ## [new-cap](http://eslint.org/docs/rules/new-cap)
 require constructor `function` names to begin with a capital letter (new-cap)

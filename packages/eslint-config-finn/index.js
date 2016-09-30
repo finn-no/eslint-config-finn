@@ -17,6 +17,7 @@ module.exports = {
         'eqeqeq': ['error', 'smart'],
         'max-depth': ['error'],
         'max-len': ['error', { code: 140, ignoreTrailingComments: true, ignoreUrls: true }],
+        'max-nested-callbacks': ['error', 5],
         'max-params': ['error', 5],
         'newline-per-chained-call': 'error',
         'no-case-declarations': 'error',
