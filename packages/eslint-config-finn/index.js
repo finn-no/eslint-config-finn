@@ -30,6 +30,7 @@ module.exports = {
         'no-duplicate-imports': 'error',
         'no-else-return': 'off',
         'no-eq-null': 'off',
+        'no-multi-spaces': 'error',
         'no-negated-condition': 'error',
         'no-negated-in-lhs': 'error',
         'no-shadow': ['error', { builtinGlobals: true, allow: ['resolve', 'reject', 'cb', 'err'] }],

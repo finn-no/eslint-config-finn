@@ -159,6 +159,10 @@ Disallow Unnecessary Nested Blocks (no-lone-blocks)
 Disallow Functions in Loops (no-loop-func)
 
 
+## [no-multi-spaces](http://eslint.org/docs/rules/no-multi-spaces)
+Disallow multiple spaces (no-multi-spaces)
+
+
 ## [no-multi-str](http://eslint.org/docs/rules/no-multi-str)
 Disallow Multiline Strings (no-multi-str)
 
