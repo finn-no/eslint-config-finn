@@ -1,5 +1,7 @@
 # Require parens in arrow function arguments (arrow-parens)
 
+(fixable) The `--fix` option on the [command line](../user-guide/command-line-interface#fix) automatically fixes problems reported by this rule.
+
 Arrow functions can omit parentheses when they have exactly one parameter. In all other cases the parameter(s) must
 be wrapped in parentheses. This rule enforces the consistent use of parentheses in arrow functions.
 
@@ -47,17 +49,20 @@ a => {}
 
 ## Options
 
-The rule takes one option, a string, which could be either `"always"` or `"as-needed"`. The default is `"always"`.
+This rule has a string option and an object one.
 
-You can set the option in configuration like this:
+String options are:
 
-```json
-"arrow-parens": ["error", "always"]
-```
+* `"always"` (default) requires parens around arguments in all cases.
+* `"as-needed"` allows omitting parens when there is only one argument.
 
-### "always"
+Object properties for variants of the `"as-needed"` option:
 
-When the rule is set to `"always"` the following patterns are considered problems:
+* `"requireForBlockBody": true` modifies the as-needed rule in order to require parens if the function body is in an intructions block (surrounded by braces).
+
+### always
+
+Examples of **incorrect** code for this rule with the default `"always"` option:
 
 ```js
 /*eslint arrow-parens: ["error", "always"]*/
@@ -71,7 +76,7 @@ a.then(foo => a);
 a(foo => { if (true) {}; });
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule with the default `"always"` option:
 
 ```js
 /*eslint arrow-parens: ["error", "always"]*/
@@ -87,7 +92,7 @@ a.then((foo) => { if (true) {}; });
 
 #### If Statements
 
-One benefits of this option is that it prevents the incorrect use of arrow functions in conditionals:
+One of benefits of this option is that it prevents the incorrect use of arrow functions in conditionals:
 
 ```js
 /*eslint-env es6*/
@@ -104,6 +109,7 @@ if (a => b) {
 ```
 
 The contents of the `if` statement is an arrow function, not a comparison.
+
 If the arrow function is intentional, it should be wrapped in parens to remove ambiguity.
 
 ```js
@@ -141,10 +147,9 @@ var a = 1, b = 2, c = 3, d = 4;
 var f = (a) => b ? c: d;
 ```
 
+### as-needed
 
-### "as-needed"
-
-When the rule is set to `"as-needed"` the following patterns are considered problems:
+Examples of **incorrect** code for this rule with the `"as-needed"` option:
 
 ```js
 /*eslint arrow-parens: ["error", "as-needed"]*/
@@ -158,7 +163,7 @@ a.then((foo) => a);
 a((foo) => { if (true) {}; });
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule with the `"as-needed"` option:
 
 ```js
 /*eslint arrow-parens: ["error", "as-needed"]*/
@@ -175,3 +180,46 @@ a.then(foo => { if (true) {}; });
 ([a, b]) => a;
 ({a, b}) => a;
 ```
+
+### requireForBlockBody
+
+Examples of **incorrect** code for the `{ "requireForBlockBody": true }` option:
+
+```js
+/*eslint arrow-parens: [2, "as-needed", { "requireForBlockBody": true }]*/
+/*eslint-env es6*/
+
+(a) => a;
+a => {};
+a => {'\n'};
+a.map((x) => x * x);
+a.map(x => {
+  return x * x;
+});
+a.then(foo => {});
+```
+
+Examples of **correct** code for the `{ "requireForBlockBody": true }` option:
+
+```js
+/*eslint arrow-parens: [2, "as-needed", { "requireForBlockBody": true }]*/
+/*eslint-env es6*/
+
+(a) => {};
+(a) => {'\n'};
+a => ({});
+() => {};
+a => a;
+a.then((foo) => {});
+a.then((foo) => { if (true) {}; });
+a((foo) => { if (true) {}; });
+(a, b, c) => a;
+(a = 10) => a;
+([a, b]) => a;
+({a, b}) => a;
+```
+
+## Further Reading
+
+* The `"as-needed", { "requireForBlockBody": true }` rule is directly inspired by the Airbnb
+ [JS Style Guide](https://github.com/airbnb/javascript#arrows--one-arg-parens).

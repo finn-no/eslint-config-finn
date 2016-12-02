@@ -1,5 +1,7 @@
 # Disallow Floating Decimals (no-floating-decimal)
 
+(fixable) The `--fix` option on the [command line](../user-guide/command-line-interface#fix) automatically fixes problems reported by this rule.
+
 Float values in JavaScript contain a decimal point, and there is no requirement that the decimal point be preceded or followed by a number. For example, the following are all valid JavaScript numbers:
 
 ```js
@@ -41,7 +43,3 @@ If you aren't concerned about misinterpreting floating decimal point values, the
 ## Compatibility
 
 * **JSHint**: W008
-
-## Further Reading
-
-* [A leading decimal point can be confused with a dot](http://jslinterrors.com/a-leading-decimal-point-can-be-confused-with-a-dot-a/)

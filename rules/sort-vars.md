@@ -7,7 +7,7 @@ When declaring multiple variables within the same block, some developers prefer 
 This rule checks all variable declaration blocks and verifies that all variables are sorted alphabetically.
 The default configuration of the rule is case-sensitive.
 
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule:
 
 ```js
 /*eslint sort-vars: "error"*/
@@ -19,7 +19,7 @@ var a, B, c;
 var a, A;
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule:
 
 ```js
 /*eslint sort-vars: "error"*/
@@ -52,15 +52,13 @@ var c, d, a, e;
 
 ## Options
 
-```
-"sort-vars": [<enabled>, { "ignoreCase": <boolean> }]
-```
+This rule has an object option:
 
-### `ignoreCase`
+* `"ignoreCase": true` (default `false`) ignores the case-sensitivity of the variables order
 
-When `true` the rule ignores the case-sensitivity of the variables order.
+### ignoreCase
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule with the `{ "ignoreCase": true }` option:
 
 ```js
 /*eslint sort-vars: ["error", { "ignoreCase": true }]*/
@@ -73,3 +71,8 @@ var a, B, c;
 ## When Not To Use It
 
 This rule is a formatting preference and not following it won't negatively affect the quality of your code. If you alphabetizing variables isn't a part of your coding standards, then you can leave this rule off.
+
+## Related Rules
+
+* [sort-keys](http://eslint.org/docs/rules/sort-keys)
+* [sort-imports](http://eslint.org/docs/rules/sort-imports)

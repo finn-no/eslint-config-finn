@@ -2,7 +2,7 @@
 
 Semicolons are usually optional in JavaScript, because of automatic semicolon insertion (ASI). You can require or disallow semicolons with the [semi](./semi.md) rule.
 
-The rules for ASI are relatively straightforward: As once described by Isaac Schlueter, a newline character character always ends a statement, just like a semicolon, **except** where one of the following is true:
+The rules for ASI are relatively straightforward: As once described by Isaac Schlueter, a newline character always ends a statement, just like a semicolon, **except** where one of the following is true:
 
 * The statement has an unclosed paren, array literal, or object literal or ends in some other way that is not a valid way to end a statement. (For instance, ending with `.` or `,`.)
 * The line is `--` or `++` (in which case it will decrement/increment the next token.)
@@ -66,6 +66,6 @@ Note that the patterns considered problems are **not** flagged by the [semi](sem
 
 ## Related Rules
 
+* [func-call-spacing](func-call-spacing.md)
 * [semi](semi.md)
-* [no-spaced-func](no-spaced-func.md)
 * [space-unary-ops](space-unary-ops.md)

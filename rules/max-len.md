@@ -8,9 +8,7 @@ var foo = { "bar": "This is a bar.", "baz": { "qux": "This is a qux" }, "difficu
 
 ## Rule Details
 
-This rule enforces a maximum line length to increase code readability and maintainability.
-
-**Note:** This rule calculates the length of a line via code points, not characters. That means if you use a double-byte character in your code, it will count as 2 code points instead of 1, and 2 will be used to calculate line length. This is a technical limitation of JavaScript that is made easier with ES2015, and we will look to update this when ES2015 is available in Node.js.
+This rule enforces a maximum line length to increase code readability and maintainability. The length of a line is defined as the number of Unicode characters in the line.
 
 ## Options
 
@@ -23,6 +21,9 @@ This rule has a number or object option:
 * `"ignoreComments": true` ignores all trailing comments and comments on their own line
 * `"ignoreTrailingComments": true` ignores only trailing comments
 * `"ignoreUrls": true` ignores lines that contain a URL
+* `"ignoreStrings": true` ignores lines that contain a double-quoted or single-quoted string
+* `"ignoreTemplateLiterals": true` ignores lines that contain a template literal
+* `"ignoreRegExpLiterals": true` ignores lines that contain a RegExp literal
 
 ### code
 
@@ -109,6 +110,36 @@ Examples of **correct** code for this rule with the `{ "ignoreUrls": true }` opt
 /*eslint max-len: ["error", { "ignoreUrls": true }]*/
 
 var url = 'https://www.example.com/really/really/really/really/really/really/really/long';
+```
+
+### ignoreStrings
+
+Examples of **correct** code for this rule with the `{ "ignoreStrings": true }` option:
+
+```js
+/*eslint max-len: ["error", { "ignoreStrings": true }]*/
+
+var longString = 'this is a really really really really really long string!';
+```
+
+### ignoreTemplateLiterals
+
+Examples of **correct** code for this rule with the `{ "ignoreTemplateLiterals": true }` option:
+
+```js
+/*eslint max-len: ["error", { "ignoreTemplateLiterals": true }]*/
+
+var longTemplateLiteral = `this is a really really really really really long template literal!`;
+```
+
+### ignoreRegExpLiterals
+
+Examples of **correct** code for this rule with the `{ "ignoreRegExpLiterals": true }` option:
+
+```js
+/*eslint max-len: ["error", { "ignoreRegExpLiterals": true }]*/
+
+var longRegExpLiteral = /this is a really really really really really long regular expression!/;
 ```
 
 ### ignorePattern

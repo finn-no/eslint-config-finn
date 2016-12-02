@@ -1,5 +1,7 @@
 # Require IIFEs to be Wrapped (wrap-iife)
 
+(fixable) The `--fix` option on the [command line](../user-guide/command-line-interface#fix) automatically fixes problems reported by this rule.
+
 You can immediately invoke function expressions, but not function declarations. A common technique to create an immediately-invoked function expression (IIFE) is to wrap a function declaration in parentheses. The opening parentheses causes the contained function to be parsed as an expression, rather than a declaration.
 
 ```js
@@ -16,11 +18,17 @@ This rule requires all immediately-invoked function expressions to be wrapped in
 
 ## Options
 
-The rule takes one option which can enforce a consistent wrapping style:
+This rule has two options, a string option and an object option.
+
+String option:
 
 * `"outside"` enforces always wrapping the *call* expression. The default is `"outside"`.
 * `"inside"` enforces always wrapping the *function* expression.
 * `"any"` enforces always wrapping, but allows either style.
+
+Object option:
+
+* `"functionPrototypeMethods": true` additionally enforces wrapping function expressions invoked using `.call` and `.apply`. The default is `false`.
 
 ### outside
 
@@ -77,4 +85,26 @@ Examples of **correct** code for the `"any"` option:
 
 var x = (function () { return { y: 1 };}()); // wrapped call expression
 var x = (function () { return { y: 1 };})(); // wrapped function expression
+```
+
+### functionPrototypeMethods
+
+Examples of **incorrect** code for this rule with the `"inside", { "functionPrototypeMethods": true }` options:
+
+```js
+/* eslint wrap-iife: [2, "inside", { functionPrototypeMethods: true }] */
+
+var x = function(){ foo(); }()
+var x = (function(){ foo(); }())
+var x = function(){ foo(); }.call(bar)
+var x = (function(){ foo(); }.call(bar))
+```
+
+Examples of **correct** code for this rule with the `"inside", { "functionPrototypeMethods": true }` options:
+
+```js
+/* eslint wrap-iife: [2, "inside", { functionPrototypeMethods: true }] */
+
+var x = (function(){ foo(); })()
+var x = (function(){ foo(); }).call(bar)
 ```

@@ -1,5 +1,7 @@
 # require `let` or `const` instead of `var` (no-var)
 
+(fixable) The `--fix` option on the [command line](../user-guide/command-line-interface#fix) automatically fixed problems reported by this rule.
+
 ECMAScript 6 allows programmers to create variables with block scope instead of function scope using the `let`
 and `const` keywords. Block scope is common in many other programming languages and helps programmers avoid mistakes
 such as:
@@ -21,7 +23,9 @@ console.log("We have " + count + " people and " + sandwiches.length + " sandwich
 
 This rule is aimed at discouraging the use of `var` and encouraging the use of `const` or `let` instead.
 
-The following patterns are considered problems:
+## Examples
+
+Examples of **incorrect** code for this rule:
 
 ```js
 /*eslint no-var: "error"*/
@@ -30,7 +34,7 @@ var x = "y";
 var CONFIG = {};
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule:
 
 ```js
 /*eslint no-var: "error"*/

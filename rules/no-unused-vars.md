@@ -11,6 +11,7 @@ A variable is considered to be used if any of the following are true:
 * It represents a function that is called (`doSomething()`)
 * It is read (`var y = x`)
 * It is passed into a function as an argument (`doSomething(x)`)
+* It is read inside of a function that is passed to another function (`doSomething(function() { foo(); })`)
 
 A variable is *not* considered to be used if it is only ever assigned to (`var x = 5`) or declared.
 
@@ -20,13 +21,18 @@ Examples of **incorrect** code for this rule:
 /*eslint no-unused-vars: "error"*/
 /*global some_unused_var*/
 
-//It checks variables you have defined as global
+// It checks variables you have defined as global
 some_unused_var = 42;
 
 var x;
 
+// Write-only variables are not considered as used.
 var y = 10;
 y = 5;
+
+// A read for a modification of itself is not considered as used.
+var z = 0;
+z = z + 1;
 
 // By default, unused arguments cause warnings.
 (function(foo) {
@@ -56,6 +62,12 @@ myFunc(function foo() {
 (function(foo) {
     return foo;
 })();
+
+var myFunc;
+myFunc = setTimeout(function() {
+    // myFunc is considered used
+    myFunc();
+}, 50);
 ```
 
 ### exported

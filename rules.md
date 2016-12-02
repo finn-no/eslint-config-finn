@@ -16,10 +16,12 @@ require `let` or `const` instead of `var` (no-var)
 Require Object Literal Shorthand Syntax (object-shorthand)
 
 ### Available options
-* `"always"` expects that the shorthand will be used whenever possible.
+* `"always"` (default) expects that the shorthand will be used whenever possible.
 * `"methods"` ensures the method shorthand is used (also applies to generators).
-* `"properties` ensures the property shorthand is used (where the key and variable name match).
+* `"properties"` ensures the property shorthand is used (where the key and variable name match).
 * `"never"` ensures that no property or method shorthand is used in any object literal.
+* `"consistent"` ensures that either all shorthand or all longform will be used in an object literal.
+* `"consistent-as-needed"` ensures that either all shorthand or all longform will be used in an object literal, but ensures all shorthand whenever possible.
 
 
 ## [prefer-const](http://eslint.org/docs/rules/prefer-const)
@@ -77,6 +79,9 @@ Require Dot Notation (dot-notation)
 Require === and !== (eqeqeq)
 
 ### Available options
+* `always` (default) - Always use === or !==.
+* `never` - Never use === or !== with `null`.
+* `ignore` - Do not apply this rule to `null`.
 * Comparing two literal values
 * Evaluating the value of `typeof`
 * Comparing against `null`
@@ -187,7 +192,7 @@ Disallow Use of `__proto__` (no-proto)
 
 
 ## [no-redeclare](http://eslint.org/docs/rules/no-redeclare)
-Disallow Redeclaring Variables (no-redeclare)
+disallow variable redeclaration (no-redeclare)
 
 
 ## [no-return-assign](http://eslint.org/docs/rules/no-return-assign)
@@ -233,6 +238,7 @@ Require IIFEs to be Wrapped (wrap-iife)
 * `"outside"` enforces always wrapping the *call* expression. The default is `"outside"`.
 * `"inside"` enforces always wrapping the *function* expression.
 * `"any"` enforces always wrapping, but allows either style.
+* `"functionPrototypeMethods": true` additionally enforces wrapping function expressions invoked using `.call` and `.apply`. The default is `false`.
 
 ### Current options
   * inside
@@ -242,7 +248,7 @@ disallow deleting variables (no-delete-var)
 
 
 ## [no-shadow](http://eslint.org/docs/rules/no-shadow)
-Disallow Shadowing (no-shadow)
+disallow variable declarations from shadowing variables declared in the outer scope (no-shadow)
 
 ### Available options
 * `functions` (by default) - reports shadowing before the outer functions are defined.
@@ -330,7 +336,14 @@ Comma style (comma-style)
 * `"last"` (default) requires a comma after and on the same line as an array element, object property, or variable declaration
 * `"first"` requires a comma before and on the same line as an array element, object property, or variable declaration
 * `"ArrayExpression": true` ignores comma style in array literals
+* `"ArrayPattern": true` ignores comma style in array patterns of destructuring
+* `"ArrowFunctionExpression": true` ignores comma style in the parameters of arrow function expressions
+* `"CallExpression": true` ignores comma style in the arguments of function calls
+* `"FunctionDeclaration": true` ignores comma style in the parameters of function declarations
+* `"FunctionExpression": true` ignores comma style in the parameters of function expressions
+* `"ImportDeclaration": true` ignores comma style in the specifiers of import declarations
 * `"ObjectExpression": true` ignores comma style in object literals
+* `"ObjectPattern": true` ignores comma style in object patterns of destructuring
 * `"VariableDeclaration": true` ignores comma style in variable declarations
 
 ### Current options
@@ -346,11 +359,13 @@ Require Consistent This (consistent-this)
   * self
 
 ## [eol-last](http://eslint.org/docs/rules/eol-last)
-Require file to end with single newline (eol-last)
+require or disallow newline at the end of files (eol-last)
 
 ### Available options
-* `"unix"` (default) enforces line feed (LF) as newline
-* `"windows"` enforces carriage return line feed (CRLF) as newline
+* `"always"` (default) enforces that files end with a newline (LF)
+* `"never"` enforces that files do not end with a newline
+* `"unix"` (deprecated) is identical to "always"
+* `"windows"` (deprecated) is identical to "always", but will use a CRLF character when autofixing
 
 
 ## [indent](http://eslint.org/docs/rules/indent)
@@ -359,13 +374,27 @@ enforce consistent indentation (indent)
 ### Available options
 * `"SwitchCase"` (default: 0) enforces indentation level for `case` clauses in `switch` statements
 * `"VariableDeclarator"` (default: 1) enforces indentation level for `var` declarators; can also take an object to define separate rules for `var`, `let` and `const` declarations.
+* `"outerIIFEBody"` (default: 1) enforces indentation level for file-level IIFEs.
+* `"MemberExpression"` (off by default) enforces indentation level for multi-line property chains (except in variable declarations and assignments)
+* `parameters` (off by default) enforces indentation level for parameters in a function declaration. This can either be a number indicating indentation level, or the string `"first"` indicating that all parameters of the declaration must be aligned with the first parameter.
+* `body` (default: 1) enforces indentation level for the body of a function declaration.
+* `parameters` (off by default) enforces indentation level for parameters in a function expression. This can either be a number indicating indentation level, or the string `"first"` indicating that all parameters of the expression must be aligned with the first parameter.
+* `body` (default: 1) enforces indentation level for the body of a function expression.
+* `arguments` (off by default) enforces indentation level for arguments in a call expression. This can either be a number indicating indentation level, or the string `"first"` indicating that all arguments of the expression must be aligned with the first argument.
 * Indent of 4 spaces with `VariableDeclarator` set to `2` will indent the multi-line variable declarations with 8 spaces.
 * Indent of 2 spaces with `VariableDeclarator` set to `2` will indent the multi-line variable declarations with 4 spaces.
 * Indent of 2 spaces with `VariableDeclarator` set to `{"var": 2, "let": 2, "const": 3}` will indent the multi-line variable declarations with 4 spaces for `var` and `let`, 6 spaces for `const` statements.
 * Indent of tab with `VariableDeclarator` set to `2` will indent the multi-line variable declarations with 2 tabs.
 * Indent of 2 spaces with `SwitchCase` set to `0` will not indent `case` clauses with respect to `switch` statements.
+* Indent of 2 spaces with `SwitchCase` set to `1` will indent `case` clauses with 2 spaces with respect to `switch` statements.
 * Indent of 2 spaces with `SwitchCase` set to `2` will indent `case` clauses with 4 spaces with respect to `switch` statements.
-* Indent of tabs with `SwitchCase` set to `2` will indent `case` clauses with 2 tabs with respect to `switch` statements.
+* Indent of tab with `SwitchCase` set to `2` will indent `case` clauses with 2 tabs with respect to `switch` statements.
+* Indent of 2 spaces with `MemberExpression` set to `0` will indent the multi-line property chains with 0 spaces.
+* Indent of 2 spaces with `MemberExpression` set to `1` will indent the multi-line property chains with 2 spaces.
+* Indent of 2 spaces with `MemberExpression` set to `2` will indent the multi-line property chains with 4 spaces.
+* Indent of 4 spaces with `MemberExpression` set to `0` will indent the multi-line property chains with 0 spaces.
+* Indent of 4 spaces with `MemberExpression` set to `1` will indent the multi-line property chains with 4 spaces.
+* Indent of 4 spaces with `MemberExpression` set to `2` will indent the multi-line property chains with 8 spaces.
 
 ### Current options
   * 4
@@ -375,16 +404,17 @@ enforce consistent indentation (indent)
 enforce consistent spacing between keys and values in object literal properties (key-spacing)
 
 ### Available options
-* `"beforeColon": false` (default) disallows spaces between the key and the colon in object literals
-* `"beforeColon": true` requires at least one space between the key and the colon in object literals
-* `"afterColon": true` (default) requires at least one space between the colon and the value in object literals
-* `"afterColon": false` disallows spaces between the colon and the value in object literals
-* `"mode": strict` (default) enforces exactly one space before or after colons in object literals
-* `"mode": minimum` enforces one or more spaces before or after colons in object literals
-* `"align": "value"` enforces horizontal alignment of values in object literals
+* `"beforeColon": false` (default) disallows spaces between the key and the colon in object literals.
+* `"beforeColon": true` requires at least one space between the key and the colon in object literals.
+* `"afterColon": true` (default) requires at least one space between the colon and the value in object literals.
+* `"afterColon": false` disallows spaces between the colon and the value in object literals.
+* `"mode": strict` (default) enforces exactly one space before or after colons in object literals.
+* `"mode": minimum` enforces one or more spaces before or after colons in object literals.
+* `"align": "value"` enforces horizontal alignment of values in object literals.
 * `"align": "colon"` enforces horizontal alignment of both colons and values in object literals.
-* `"singleLine"` specifies a spacing style for single-line object literals
-* `"multiLine"` specifies a spacing style for multi-line object literals
+* `"align"` with an object value allows for fine-grained spacing when values are being aligned in object literals.
+* `"singleLine"` specifies a spacing style for single-line object literals.
+* `"multiLine"` specifies a spacing style for multi-line object literals.
 
 ### Current options
   * beforeColon = false
@@ -400,7 +430,7 @@ enforce a maximum depth that callbacks can be nested (max-nested-callbacks)
   * 5
 
 ## [new-cap](http://eslint.org/docs/rules/new-cap)
-require constructor `function` names to begin with a capital letter (new-cap)
+require constructor names to begin with a capital letter (new-cap)
 
 ### Available options
 * `"newIsCap": true` (default) requires all `new` operators to be called with uppercase-started functions.
@@ -408,7 +438,9 @@ require constructor `function` names to begin with a capital letter (new-cap)
 * `"capIsNew": true` (default) requires all uppercase-started functions to be called with `new` operators.
 * `"capIsNew": false` allows uppercase-started functions to be called without `new` operators.
 * `"newIsCapExceptions"` allows specified lowercase-started function names to be called with the `new` operator.
+* `"newIsCapExceptionPattern"` allows any lowercase-started function names that match the specified regex pattern to be called with the `new` operator.
 * `"capIsNewExceptions"` allows specified uppercase-started function names to be called without the `new` operator.
+* `"capIsNewExceptionPattern"` allows any uppercase-started function names that match the specified regex pattern to be called without the `new` operator.
 * `"properties": true` (default) enables checks on object properties
 * `"properties": false` disables checks on object properties
 
@@ -441,46 +473,83 @@ disallow nested ternary expressions (no-nested-ternary)
 
 
 ## [object-curly-spacing](http://eslint.org/docs/rules/object-curly-spacing)
-Disallow or enforce spaces inside of curly braces in objects. (object-curly-spacing)
+enforce consistent spacing inside braces (object-curly-spacing)
 
 ### Available options
-* `"always"` enforces a space inside of curly braces
-* `"never"` disallows spaces inside of curly braces (default)
+* `"never"` (default) disallows spacing inside of braces
+* `"always"` requires spacing inside of braces (except `{}`)
+* `"arraysInObjects": true` requires spacing inside of braces of objects beginning and/or ending with an array element (applies when the first option is set to `never`)
+* `"arraysInObjects": false` disallows spacing inside of braces of objects beginning and/or ending with an array element (applies when the first option is set to `always`)
+* `"objectsInObjects": true` requires spacing inside of braces of objects beginning and/or ending with an object element (applies when the first option is set to `never`)
+* `"objectsInObjects": false` disallows spacing inside of braces of objects beginning and/or ending with an object element (applies when the first option is set to `always`)
 
 ### Current options
   * always
 
 ## [no-unneeded-ternary](http://eslint.org/docs/rules/no-unneeded-ternary)
-Disallow conditional expressions that can be expressed with simpler constructs (no-unneeded-ternary)
+disallow ternary operators when simpler alternatives exist (no-unneeded-ternary)
+
+### Available options
+* `"defaultAssignment": true` (default) allows the conditional expression as a default assignment pattern
+* `"defaultAssignment": false` disallows the conditional expression as a default assignment pattern
 
 
 ## [operator-assignment](http://eslint.org/docs/rules/operator-assignment)
-Operator Assignment Shorthand (operator-assignment)
+require or disallow assignment operator shorthand where possible (operator-assignment)
+
+### Available options
+* `"always"` (default)  requires assignment operator shorthand where possible
+* `"never"` disallows assignment operator shorthand
 
 ### Current options
   * always
 
 ## [operator-linebreak](http://eslint.org/docs/rules/operator-linebreak)
-Operator Linebreak (operator-linebreak)
+enforce consistent linebreak style for operators (operator-linebreak)
+
+### Available options
+* `"after"` (default) requires linebreaks to be placed after the operator (except for the ternary operator characters `?` and `:`)
+* `"before"` requires linebreaks to be placed before the operator
+* `"none"` disallows linebreaks on either side of the operator
+* `"overrides"` overrides the global setting for specified operators
 
 ### Current options
   * after
 
 ## [padded-blocks](http://eslint.org/docs/rules/padded-blocks)
-Enforce padding within blocks (padded-blocks)
+require or disallow padding within blocks (padded-blocks)
+
+### Available options
+* `"always"` (default) requires empty lines at the beginning and ending of block statements (except `switch` statements and classes)
+* `"never"` disallows empty lines at the beginning and ending of block statements
+* `"blocks"` require or disallow padding within block statements
+* `"classes"` require or disallow padding within classes
+* `"switches"` require or disallow padding within `switch` statements
 
 ### Current options
   * never
 
 ## [quotes](http://eslint.org/docs/rules/quotes)
-Enforce Quote Style (quotes)
+enforce the consistent use of either backticks, double, or single quotes (quotes)
+
+### Available options
+* `"double"` (default) requires the use of double quotes wherever possible
+* `"single"` requires the use of single quotes wherever possible
+* `"backtick"` requires the use of backticks wherever possible
+* `"avoidEscape": true` allows strings to use single-quotes or double-quotes so long as the string contains a quote that would have to be escaped otherwise
+* `"allowTemplateLiterals": true` allows strings to use backticks
 
 ### Current options
   * single
   * avoidEscape = true
 
 ## [semi](http://eslint.org/docs/rules/semi)
-Enforce or Disallow Semicolons (semi)
+require or disallow semicolons instead of ASI (semi)
+
+### Available options
+* `"always"` (default) requires semicolons at the end of statements
+* `"never"` disallows semicolons as the end of statements (except to disambiguate statements beginning with `[`, `(`, `/`, `+`, or `-`)
+* `"omitLastInOneLineBlock": true` ignores the last semicolon in a block in which its braces (and therefore the content of the block) are in the same line
 
 ### Current options
   * always
@@ -549,6 +618,11 @@ require or disallow trailing commas (comma-dangle)
 * `"always"` requires trailing commas
 * `"always-multiline"` requires trailing commas when the last element or property is in a *different* line than the closing `]` or `}` and disallows trailing commas when the last element or property is on the *same* line as the closing `]` or `}`
 * `"only-multiline"` allows (but does not require) trailing commas when the last element or property is in a *different* line than the closing `]` or `}` and disallows trailing commas when the last element or property is on the *same* line as the closing `]` or `}`
+* `arrays` is for array literals and array patterns of destructuring. (e.g. `let [a,] = [1,];`)
+* `objects` is for object literals and object patterns of destructuring. (e.g. `let {a,} = {a: 1};`)
+* `imports` is for import declarations of ES Modules. (e.g. `import {a,} from "foo";`)
+* `exports` is for export declarations of ES Modules. (e.g. `export {a,};`)
+* `functions` is for function declarations and function calls. (e.g. `(function(a,){ })(b,);`)<br> `functions` is set to `"ignore"` by default for consistency with the string option.
 
 ### Current options
   * always-multiline
@@ -560,6 +634,17 @@ Disallow or enforce spaces inside of computed properties (computed-property-spac
 * `"never"` (default) disallows spaces inside computed property brackets
 * `"always"` requires one or more spaces inside computed property brackets
 
+
+## [lines-around-directive](http://eslint.org/docs/rules/lines-around-directive)
+require or disallow newlines around directives (lines-around-directive)
+
+### Available options
+* `"always"` (default) enforces blank newlines around directives.
+* `"never"` disallows blank newlines around directives.
+
+### Current options
+  * before = never
+  * after = always
 
 ## [max-depth](http://eslint.org/docs/rules/max-depth)
 enforce a maximum depth that blocks can be nested (max-depth)
@@ -579,6 +664,9 @@ enforce a maximum line length (max-len)
 * `"ignoreComments": true` ignores all trailing comments and comments on their own line
 * `"ignoreTrailingComments": true` ignores only trailing comments
 * `"ignoreUrls": true` ignores lines that contain a URL
+* `"ignoreStrings": true` ignores lines that contain a double-quoted or single-quoted string
+* `"ignoreTemplateLiterals": true` ignores lines that contain a template literal
+* `"ignoreRegExpLiterals": true` ignores lines that contain a RegExp literal
 
 ### Current options
   * code = 140
@@ -586,7 +674,7 @@ enforce a maximum line length (max-len)
   * ignoreUrls = true
 
 ## [max-params](http://eslint.org/docs/rules/max-params)
-enforce a maximum number of parameters in `function` definitions (max-params)
+enforce a maximum number of parameters in function definitions (max-params)
 
 ### Available options
 * `"max"` (default `3`) enforces a maximum number of parameters in function definitions
@@ -657,11 +745,15 @@ Disallow Shadowing of Restricted Names (no-shadow-restricted-names)
 
 
 ## [no-spaced-func](http://eslint.org/docs/rules/no-spaced-func)
-disallow spacing between `function` identifiers and their applications (no-spaced-func)
+disallow spacing between function identifiers and their applications (no-spaced-func)
 
 
 ## [no-trailing-spaces](http://eslint.org/docs/rules/no-trailing-spaces)
-Disallow trailing spaces at the end of lines (no-trailing-spaces)
+disallow trailing whitespace at the end of lines (no-trailing-spaces)
+
+### Available options
+* `"skipBlankLines": false` (default) disallows trailing whitespace on empty lines
+* `"skipBlankLines": true` allows trailing whitespace on empty lines
 
 
 ## [no-useless-call](http://eslint.org/docs/rules/no-useless-call)
@@ -673,14 +765,21 @@ Disallow unnecessary escape usage (no-useless-escape)
 
 
 ## [one-var](http://eslint.org/docs/rules/one-var)
-Require or Disallow One Variable Declaration per Scope (one-var)
+enforce variables to be declared either together or separately in functions (one-var)
 
 ### Available options
-* `var`
-* `let`
-* `const`
-* `uninitialized`
-* `initialized`
+* `"always"` (default) requires one variable declaration per scope
+* `"never"` requires multiple variable declarations per scope
+* `"var": "always"` requires one `var` declaration per function
+* `"var": "never"` requires multiple `var` declarations per function
+* `"let": "always"` requires one `let` declaration per block
+* `"let": "never"` requires multiple `let` declarations per block
+* `"const": "always"` requires one `const` declaration per block
+* `"const": "never"` requires multiple `const` declarations per block
+* `"initialized": "always"` requires one variable declaration for initialized variables per scope
+* `"initialized": "never"` requires multiple variable declarations for initialized variables per scope
+* `"uninitialized": "always"` requires one variable declaration for uninitialized variables per scope
+* `"uninitialized": "never"` requires multiple variable declarations for uninitialized variables per scope
 
 ### Current options
   * never
@@ -704,7 +803,17 @@ Suggest using template literals instead of string concatenation. (prefer-templat
 
 
 ## [quote-props](http://eslint.org/docs/rules/quote-props)
-Quoting Style for Property Names (quote-props)
+require quotes around object literal property names (quote-props)
+
+### Available options
+* `"always"` (default) requires quotes around all object literal property names
+* `"as-needed"` disallows quotes around object literal property names that are not strictly required
+* `"consistent"` enforces a consistent quote style requires quotes around object literal property names
+* `"consistent-as-needed"` requires quotes around all object literal property names if any name strictly requires quotes, otherwise disallows quotes around object property names
+* `"keywords": true` requires quotes around language keywords used as object property names (only applies when using `as-needed` or `consistent-as-needed`)
+* `"unnecessary": true` (default) disallows quotes around object literal property names that are not strictly required (only applies when using `as-needed`)
+* `"unnecessary": false` allows quotes around object literal property names that are not strictly required (only applies when using `as-needed`)
+* `"numbers": true` requires quotes around numbers used as object property names (only applies when using `as-needed`)
 
 ### Current options
   * consistent-as-needed
@@ -712,9 +821,16 @@ Quoting Style for Property Names (quote-props)
 ## [space-before-function-paren](http://eslint.org/docs/rules/space-before-function-paren)
 Require or disallow a space before function parenthesis (space-before-function-paren)
 
+### Available options
+* `always` (default) requires a space followed by the `(` of arguments.
+* `never` disallows any space followed by the `(` of arguments.
+* `anonymous` is for anonymous function expressions (e.g. `function () {}`).
+* `named` is for named function expressions (e.g. `function foo () {}`).
+* `asyncArrow` is for async arrow function expressions (e.g. `async () => {}`). `asyncArrow` is set to `"ignore"` by default for backwards compatibility.
+
 
 ## [space-infix-ops](http://eslint.org/docs/rules/space-infix-ops)
-Require Spaces Around Infix Operators (space-infix-ops)
+require spacing around infix operators (space-infix-ops)
 
 
 ## [space-unary-ops](http://eslint.org/docs/rules/space-unary-ops)

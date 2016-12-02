@@ -72,6 +72,16 @@ This rule has an object option:
 
 * `"SwitchCase"` (default: 0) enforces indentation level for `case` clauses in `switch` statements
 * `"VariableDeclarator"` (default: 1) enforces indentation level for `var` declarators; can also take an object to define separate rules for `var`, `let` and `const` declarations.
+* `"outerIIFEBody"` (default: 1) enforces indentation level for file-level IIFEs.
+* `"MemberExpression"` (off by default) enforces indentation level for multi-line property chains (except in variable declarations and assignments)
+* `"FunctionDeclaration"` takes an object to define rules for function declarations.
+    * `parameters` (off by default) enforces indentation level for parameters in a function declaration. This can either be a number indicating indentation level, or the string `"first"` indicating that all parameters of the declaration must be aligned with the first parameter.
+    * `body` (default: 1) enforces indentation level for the body of a function declaration.
+* `"FunctionExpression"` takes an object to define rules for function expressions.
+    * `parameters` (off by default) enforces indentation level for parameters in a function expression. This can either be a number indicating indentation level, or the string `"first"` indicating that all parameters of the expression must be aligned with the first parameter.
+    * `body` (default: 1) enforces indentation level for the body of a function expression.
+* `"CallExpression"` takes an object to define rules for function call expressions.
+    * `arguments` (off by default) enforces indentation level for arguments in a call expression. This can either be a number indicating indentation level, or the string `"first"` indicating that all arguments of the expression must be aligned with the first argument.
 
 Level of indentation denotes the multiple of the indent specified. Example:
 
@@ -80,8 +90,15 @@ Level of indentation denotes the multiple of the indent specified. Example:
 * Indent of 2 spaces with `VariableDeclarator` set to `{"var": 2, "let": 2, "const": 3}` will indent the multi-line variable declarations with 4 spaces for `var` and `let`, 6 spaces for `const` statements.
 * Indent of tab with `VariableDeclarator` set to `2` will indent the multi-line variable declarations with 2 tabs.
 * Indent of 2 spaces with `SwitchCase` set to `0` will not indent `case` clauses with respect to `switch` statements.
+* Indent of 2 spaces with `SwitchCase` set to `1` will indent `case` clauses with 2 spaces with respect to `switch` statements.
 * Indent of 2 spaces with `SwitchCase` set to `2` will indent `case` clauses with 4 spaces with respect to `switch` statements.
-* Indent of tabs with `SwitchCase` set to `2` will indent `case` clauses with 2 tabs with respect to `switch` statements.
+* Indent of tab with `SwitchCase` set to `2` will indent `case` clauses with 2 tabs with respect to `switch` statements.
+* Indent of 2 spaces with `MemberExpression` set to `0` will indent the multi-line property chains with 0 spaces.
+* Indent of 2 spaces with `MemberExpression` set to `1` will indent the multi-line property chains with 2 spaces.
+* Indent of 2 spaces with `MemberExpression` set to `2` will indent the multi-line property chains with 4 spaces.
+* Indent of 4 spaces with `MemberExpression` set to `0` will indent the multi-line property chains with 0 spaces.
+* Indent of 4 spaces with `MemberExpression` set to `1` will indent the multi-line property chains with 4 spaces.
+* Indent of 4 spaces with `MemberExpression` set to `2` will indent the multi-line property chains with 8 spaces.
 
 ### tab
 
@@ -207,6 +224,210 @@ let a,
 const a = 1,
       b = 2,
       c = 3;
+```
+
+### outerIIFEBody
+
+Examples of **incorrect** code for this rule with the options `2, { "outerIIFEBody": 0 }`:
+
+```js
+/*eslint indent: ["error", 2, { "outerIIFEBody": 0 }]*/
+
+(function() {
+
+  function foo(x) {
+    return x + 1;
+  }
+
+})();
+
+
+if(y) {
+console.log('foo');
+}
+```
+
+Examples of **correct** code for this rule with the options `2, {"outerIIFEBody": 0}`:
+
+```js
+/*eslint indent: ["error", 2, { "outerIIFEBody": 0 }]*/
+
+(function() {
+
+function foo(x) {
+  return x + 1;
+}
+
+})();
+
+
+if(y) {
+   console.log('foo');
+}
+```
+
+### MemberExpression
+
+Examples of **incorrect** code for this rule with the `2, { "MemberExpression": 1 }` options:
+
+```js
+/*eslint indent: ["error", 2, { "MemberExpression": 1 }]*/
+
+foo
+.bar
+.baz()
+```
+
+Examples of **correct** code for this rule with the `2, { "MemberExpression": 1 }` option:
+
+```js
+/*eslint indent: ["error", 2, { "MemberExpression": 1 }]*/
+
+foo
+  .bar
+  .baz();
+
+// Any indentation is permitted in variable declarations and assignments.
+var bip = aardvark.badger
+                  .coyote;
+```
+
+### FunctionDeclaration
+
+Examples of **incorrect** code for this rule with the `2, { "FunctionDeclaration": {"body": 1, "parameters": 2} }` option:
+
+```js
+/*eslint indent: ["error", 2, { "FunctionDeclaration": {"body": 1, "parameters": 2} }]*/
+
+function foo(bar,
+  baz,
+  qux) {
+    qux();
+}
+```
+
+Examples of **correct** code for this rule with the `2, { "FunctionDeclaration": {"body": 1, "parameters": 2} }` option:
+
+```js
+/*eslint indent: ["error", 2, { "FunctionDeclaration": {"body": 1, "parameters": 2} }]*/
+
+function foo(bar,
+    baz,
+    qux) {
+  qux();
+}
+```
+
+Examples of **incorrect** code for this rule with the `2, { "FunctionDeclaration": {"parameters": "first"} }` option:
+
+```js
+/*eslint indent: ["error", 2, {"FunctionDeclaration": {"parameters": "first"}}]*/
+
+function foo(bar, baz,
+  qux, boop) {
+  qux();
+}
+```
+
+Examples of **correct** code for this rule with the `2, { "FunctionDeclaration": {"parameters": "first"} }` option:
+
+```js
+/*eslint indent: ["error", 2, {"FunctionDeclaration": {"parameters": "first"}}]*/
+
+function foo(bar, baz,
+             qux, boop) {
+  qux();
+}
+```
+
+### FunctionExpression
+
+Examples of **incorrect** code for this rule with the `2, { "FunctionExpression": {"body": 1, "parameters": 2} }` option:
+
+```js
+/*eslint indent: ["error", 2, { "FunctionExpression": {"body": 1, "parameters": 2} }]*/
+
+var foo = function(bar,
+  baz,
+  qux) {
+    qux();
+}
+```
+
+Examples of **correct** code for this rule with the `2, { "FunctionExpression": {"body": 1, "parameters": 2} }` option:
+
+```js
+/*eslint indent: ["error", 2, { "FunctionExpression": {"body": 1, "parameters": 2} }]*/
+
+var foo = function(bar,
+    baz,
+    qux) {
+  qux();
+}
+```
+
+Examples of **incorrect** code for this rule with the `2, { "FunctionExpression": {"parameters": "first"} }` option:
+
+```js
+/*eslint indent: ["error", 2, {"FunctionExpression": {"parameters": "first"}}]*/
+
+var foo = function(bar, baz,
+  qux, boop) {
+  qux();
+}
+```
+
+Examples of **correct** code for this rule with the `2, { "FunctionExpression": {"parameters": "first"} }` option:
+
+```js
+/*eslint indent: ["error", 2, {"FunctionExpression": {"parameters": "first"}}]*/
+
+var foo = function(bar, baz,
+                   qux, boop) {
+  qux();
+}
+```
+
+### CallExpression
+
+Examples of **incorrect** code for this rule with the `2, { "CallExpression": {"arguments": 1} }` option:
+
+```js
+/*eslint indent: ["error", 2, { "CallExpression": {"arguments": 1} }]*/
+
+foo(bar,
+    baz,
+      qux
+);
+```
+
+Examples of **correct** code for this rule with the `2, { "CallExpression": {"arguments": 1} }` option:
+
+```js
+/*eslint indent: ["error", 2, { "CallExpression": {"arguments": 1} }]*/
+
+foo(bar,
+  baz,
+  qux
+);
+```
+
+Examples of **incorrect** code for this rule with the `2, { "CallExpression": {"arguments": "first"} }` option:
+
+```js
+/*eslint indent: ["error", 2, {"CallExpression": {"arguments": "first"}}]*/
+
+foo(bar, baz,
+  baz, boop, beep);
+```
+
+Examples of **correct** code for this rule with the `2, { "CallExpression": {"arguments": "first"} }` option:
+
+```js
+/*eslint indent: ["error", 2, {"CallExpression": {"arguments": "first"}}]*/
+
+foo(bar, baz,
+    baz, boop, beep);
 ```
 
 ## Compatibility
