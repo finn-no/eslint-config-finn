@@ -260,7 +260,6 @@ disallow variable declarations from shadowing variables declared in the outer sc
 * `never` - never report shadowing before the outer variables/functions are defined.
 
 ### Current options
-  * builtinGlobals = true
   * allow = resolve,reject,cb,err
 
 ## [no-undef-init](http://eslint.org/docs/rules/no-undef-init)
