@@ -28,13 +28,13 @@
     "url": "https://github.com/finn-no/eslint-config-finn/issues"
   },
   "peerDependencies": {
-    "eslint": "^3.7.0"
+    "eslint": "^3.12.2"
   },
   "devDependencies": {
-    "eslint": "^3.7.0"
+    "eslint": "^3.12.2"
   },
   "dependencies": {
-    "eslint-config-spt": "^3.0.0-beta-2"
+    "eslint-config-spt": "^3.0.0"
   },
   "license": "MIT"
 }
