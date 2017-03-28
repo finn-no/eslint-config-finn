@@ -2,7 +2,7 @@
 
 module.exports = {
     extends: [
-        'eslint-config-spt',
+        'eslint-config-schibsted',
     ].map(require.resolve),
 
     rules: {

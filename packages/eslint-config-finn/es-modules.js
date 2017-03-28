@@ -2,6 +2,6 @@
 
 module.exports = {
     extends: [
-        'eslint-config-spt/env-es6-modules',
+        'eslint-config-schibsted/env-es6-modules',
     ].map(require.resolve),
 };
