@@ -2,7 +2,7 @@
 
 module.exports = {
     extends: [
-        'eslint-config-spt-react',
+        'eslint-config-schibsted-react',
     ],
     parserOptions: {
         ecmaFeatures: {

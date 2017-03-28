@@ -2,7 +2,7 @@
 
 module.exports = {
     extends: [
-        'eslint-config-spt/env-node',
+        'eslint-config-schibsted/env-node',
     ].map(require.resolve),
     rules: {
         'no-console': 'off',

@@ -2,7 +2,7 @@
 
 module.exports = {
     extends: [
-        'eslint-config-spt/env-es6-false',
+        'eslint-config-schibsted/env-es6-false',
     ].map(require.resolve),
     rules: {
         'arrow-body-style': 'off',

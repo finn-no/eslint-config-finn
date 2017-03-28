@@ -34,7 +34,7 @@
     "eslint": "^3.12.2"
   },
   "dependencies": {
-    "eslint-config-spt": "^3.0.0"
+    "eslint-config-schibsted": "^3.1.0"
   },
   "license": "MIT"
 }
