@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-finn-prettier",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "ESLint prettier config for FINN.no",
   "files": [
     "index.js",
