@@ -5,8 +5,7 @@ module.exports = {
     plugins: [
         'prettier',
     ],
-
     rules: {
-        'prettier/prettier': ['error', { printWidth: 120, tabWidth: 4, singleQuote: true, trailingComma: 'es5' }],
+        'prettier/prettier': ['error', { tabWidth: 4, singleQuote: true, trailingComma: 'es5' }],
     },
 };
