@@ -18,7 +18,7 @@ Then add the `extends` option to your `.eslintrc`:
 }
 ```
 
-This overrides all style rules defined above it, and uses `{ printWidth: 120, tabWidth: 4, singleQuote: true, trailingComma: 'es5' }` as options.
+This overrides all style rules defined above it, and uses `{ tabWidth: 4, singleQuote: true, trailingComma: 'es5' }` as options.
 
 You can override specific settings by specifying them as normal. See <http://eslint.org/docs/developer-guide/shareable-configs> for more details.
 
