@@ -1,8 +1,5 @@
 'use strict';
 
 module.exports = {
-    extends: [
-        require.resolve('./prettier.js'),
-        'prettier/react',
-    ],
+    extends: [require.resolve('./prettier.js'), 'prettier/react'],
 };

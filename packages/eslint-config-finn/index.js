@@ -1,9 +1,7 @@
 'use strict';
 
 module.exports = {
-    extends: [
-        'eslint-config-schibsted',
-    ].map(require.resolve),
+    extends: ['eslint-config-schibsted'].map(require.resolve),
 
     rules: {
         'array-bracket-spacing': 'error',
@@ -14,10 +12,16 @@ module.exports = {
         'brace-style': ['error', '1tbs', { allowSingleLine: true }],
         'comma-dangle': ['error', 'always-multiline'],
         'computed-property-spacing': 'error',
-        'eqeqeq': ['error', 'smart'],
-        'lines-around-directive': ['error', { before: 'never', after: 'always' }],
+        eqeqeq: ['error', 'smart'],
+        'lines-around-directive': [
+            'error',
+            { before: 'never', after: 'always' },
+        ],
         'max-depth': ['error'],
-        'max-len': ['error', { code: 140, ignoreTrailingComments: true, ignoreUrls: true }],
+        'max-len': [
+            'error',
+            { code: 140, ignoreTrailingComments: true, ignoreUrls: true },
+        ],
         'max-nested-callbacks': ['error', 5],
         'max-params': ['error', 5],
         'newline-per-chained-call': 'error',
@@ -48,12 +52,12 @@ module.exports = {
         'prefer-spread': 'error',
         'prefer-template': 'error',
         'quote-props': ['error', 'consistent-as-needed'],
-        'quotes': ['error', 'single', { avoidEscape: true }],
+        quotes: ['error', 'single', { avoidEscape: true }],
         'space-before-function-paren': 'error',
         'space-infix-ops': 'error',
         'space-unary-ops': 'error',
         'template-curly-spacing': 'error',
         'vars-on-top': 'off',
-        'yoda': 'error',
+        yoda: 'error',
     },
 };

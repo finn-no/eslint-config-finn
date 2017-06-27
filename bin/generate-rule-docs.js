@@ -11,11 +11,11 @@ const CLIEngine = eslint.CLIEngine;
 const configFile = path.resolve(process.cwd(), process.argv[2]);
 const rulesDocPath = path.resolve(__dirname, '../rules');
 
-function ruleToFile (ruleName) {
+function ruleToFile(ruleName) {
     return path.resolve(rulesDocPath, `${ruleName}.md`);
 }
 
-function relevantRuleDoc (rule) {
+function relevantRuleDoc(rule) {
     const lexer = new marked.Lexer();
     const tokens = lexer.lex(rule.doc);
     const currentHeading = {
@@ -27,39 +27,46 @@ function relevantRuleDoc (rule) {
     let isListItem = false;
     let itemText;
 
-    const relevantDoc = tokens.reduce((r, token) => {
-        if (token.type === 'heading') {
-            currentHeading[`l${token.depth}`] = token.text;
-        } else if (token.type === 'list_item_start') {
-            isListItem = true;
-            itemText = [];
-        } else if (token.type === 'list_item_end') {
-            isListItem = false;
-            if (itemText && itemText.length) {
-                r.options.push(itemText.join(' '));
+    const relevantDoc = tokens.reduce(
+        (r, token) => {
+            if (token.type === 'heading') {
+                currentHeading[`l${token.depth}`] = token.text;
+            } else if (token.type === 'list_item_start') {
+                isListItem = true;
+                itemText = [];
+            } else if (token.type === 'list_item_end') {
+                isListItem = false;
+                if (itemText && itemText.length) {
+                    r.options.push(itemText.join(' '));
+                }
+                itemText = null;
             }
-            itemText = null;
-        }
 
-        if (token.type === 'heading' && token.depth === 1) {
-            r.heading = token.text;
-        } else if (currentHeading.l2 === 'Options' && isListItem && token.text) {
-            itemText.push(token.text);
-        } else if (token.type === 'code') {
-            r.code.push(token.text);
-        }
+            if (token.type === 'heading' && token.depth === 1) {
+                r.heading = token.text;
+            } else if (
+                currentHeading.l2 === 'Options' &&
+                isListItem &&
+                token.text
+            ) {
+                itemText.push(token.text);
+            } else if (token.type === 'code') {
+                r.code.push(token.text);
+            }
 
-        return r;
-    }, { code: [], options: [] });
+            return r;
+        },
+        { code: [], options: [] }
+    );
 
     rule.generated = relevantDoc;
 
     return rule;
 }
 
-function printOption (opt) {
+function printOption(opt) {
     if (typeof opt == 'object') {
-        Object.keys(opt).forEach((key) => {
+        Object.keys(opt).forEach(key => {
             console.log(`  * ${key} = ${opt[key]}`);
         });
     } else {
@@ -73,7 +80,7 @@ const config = new CLIEngine({
 }).getConfigForFile(configFile);
 const rules = config.rules;
 
-function getRuleLevel (ruleConfig) {
+function getRuleLevel(ruleConfig) {
     return Array.isArray(ruleConfig) ? ruleConfig[0] : ruleConfig;
 }
 
@@ -97,33 +104,39 @@ asyncMap(enabledRules.map(ruleToFile), fs.readFile, (err, results) => {
         return;
     }
 
-    results.map(buffer => buffer.toString()).map((doc, i) => {
-        const name = enabledRules[i];
-        return {
-            name,
-            config: rules[name],
-            doc,
-        };
-    })
-    .map(relevantRuleDoc)
-    .forEach((rule) => {
-        console.log(`## [${rule.name}](http://eslint.org/docs/rules/${rule.name})`);
-        console.log(`${rule.generated.heading}`);
-        console.log('');
-
-        if (rule.generated.options && rule.generated.options.length) {
-            console.log('### Available options');
-            rule.generated.options.forEach(o => { console.log(`* ${o}`); });
+    results
+        .map(buffer => buffer.toString())
+        .map((doc, i) => {
+            const name = enabledRules[i];
+            return {
+                name,
+                config: rules[name],
+                doc,
+            };
+        })
+        .map(relevantRuleDoc)
+        .forEach(rule => {
+            console.log(
+                `## [${rule.name}](http://eslint.org/docs/rules/${rule.name})`
+            );
+            console.log(`${rule.generated.heading}`);
             console.log('');
-        }
 
-        if (Array.isArray(rule.config) && rule.config.length > 1) {
-            console.log('### Current options');
-            rule.config.slice(1).forEach(function printOpt (opt) {
-                printOption(opt);
-            });
-        }
+            if (rule.generated.options && rule.generated.options.length) {
+                console.log('### Available options');
+                rule.generated.options.forEach(o => {
+                    console.log(`* ${o}`);
+                });
+                console.log('');
+            }
 
-        console.log('');
-    });
+            if (Array.isArray(rule.config) && rule.config.length > 1) {
+                console.log('### Current options');
+                rule.config.slice(1).forEach(function printOpt(opt) {
+                    printOption(opt);
+                });
+            }
+
+            console.log('');
+        });
 });

@@ -1,6 +1,7 @@
 {
     "extends": [
-        "finn",
-        "finn/node"
+        "./packages/eslint-config-finn/index.js",
+        "./packages/eslint-config-finn/node.js",
+        "./packages/eslint-config-finn-prettier/index.js"
     ]
 }

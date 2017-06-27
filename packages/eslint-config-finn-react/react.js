@@ -1,9 +1,7 @@
 'use strict';
 
 module.exports = {
-    extends: [
-        'eslint-config-schibsted-react',
-    ],
+    extends: ['eslint-config-schibsted-react'],
     parserOptions: {
         ecmaFeatures: {
             experimentalObjectRestSpread: true,

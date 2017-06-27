@@ -2,10 +2,11 @@
 
 module.exports = {
     extends: 'prettier',
-    plugins: [
-        'prettier',
-    ],
+    plugins: ['prettier'],
     rules: {
-        'prettier/prettier': ['error', { tabWidth: 4, singleQuote: true, trailingComma: 'es5' }],
+        'prettier/prettier': [
+            'error',
+            { tabWidth: 4, singleQuote: true, trailingComma: 'es5' },
+        ],
     },
 };

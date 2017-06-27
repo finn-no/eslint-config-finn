@@ -1,9 +1,7 @@
 'use strict';
 
 module.exports = {
-    extends: [
-        'eslint-config-schibsted/env-es6-false',
-    ].map(require.resolve),
+    extends: ['eslint-config-schibsted/env-es6-false'].map(require.resolve),
     rules: {
         'arrow-body-style': 'off',
         'arrow-spacing': 'off',

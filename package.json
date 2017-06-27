@@ -11,9 +11,7 @@
     "install:config": "cd packages/eslint-config-finn && yarn",
     "install:config-react": "cd packages/eslint-config-finn-react && yarn",
     "install:config-prettier": "cd packages/eslint-config-finn-prettier && yarn",
-    "pretest": "npm link packages/eslint-config-finn",
     "test": "eslint . && node test/config-test.js && npm run test:finn && npm run test:finn-react && npm run test:finn-prettier",
-    "posttest": "npm unlink packages/eslint-config-finn",
     "test:finn": "cd packages/eslint-config-finn && npm test",
     "test:finn-react": "cd packages/eslint-config-finn-react && npm test",
     "test:finn-prettier": "cd packages/eslint-config-finn-prettier && npm test"
@@ -33,8 +31,11 @@
   "devDependencies": {
     "async": "^2.0.1",
     "eslint": "^3.7.0",
+    "eslint-config-prettier": "^2.2.0",
     "eslint-find-rules": "^1.13.0",
-    "marked": "^0.3.6"
+    "eslint-plugin-prettier": "^2.1.2",
+    "marked": "^0.3.6",
+    "prettier": "^1.4.4"
   },
   "license": "MIT"
 }
