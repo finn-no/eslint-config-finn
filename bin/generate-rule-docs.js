@@ -12,7 +12,13 @@ const configFile = path.resolve(process.cwd(), process.argv[2]);
 const rulesDocPath = path.resolve(__dirname, '../rules');
 
 function ruleToFile(ruleName) {
-    return path.resolve(rulesDocPath, `${ruleName}.md`);
+    const rulePath = path.resolve(rulesDocPath, `${ruleName}.md`);
+
+    if (fs.existsSync(rulePath)) {
+        return rulePath;
+    }
+
+    return null;
 }
 
 function relevantRuleDoc(rule) {
@@ -98,45 +104,49 @@ const enabledRules = Object.keys(rules).filter(ruleName => {
     return ruleLevel !== 0;
 });
 
-asyncMap(enabledRules.map(ruleToFile), fs.readFile, (err, results) => {
-    if (err) {
-        console.error(err);
-        return;
-    }
+asyncMap(
+    enabledRules.map(ruleToFile).filter(Boolean),
+    fs.readFile,
+    (err, results) => {
+        if (err) {
+            console.error(err);
+            return;
+        }
 
-    results
-        .map(buffer => buffer.toString())
-        .map((doc, i) => {
-            const name = enabledRules[i];
-            return {
-                name,
-                config: rules[name],
-                doc,
-            };
-        })
-        .map(relevantRuleDoc)
-        .forEach(rule => {
-            console.log(
-                `## [${rule.name}](http://eslint.org/docs/rules/${rule.name})`
-            );
-            console.log(`${rule.generated.heading}`);
-            console.log('');
-
-            if (rule.generated.options && rule.generated.options.length) {
-                console.log('### Available options');
-                rule.generated.options.forEach(o => {
-                    console.log(`* ${o}`);
-                });
+        results
+            .map(buffer => buffer.toString())
+            .map((doc, i) => {
+                const name = enabledRules[i];
+                return {
+                    name,
+                    config: rules[name],
+                    doc,
+                };
+            })
+            .map(relevantRuleDoc)
+            .forEach(rule => {
+                console.log(
+                    `## [${rule.name}](http://eslint.org/docs/rules/${rule.name})`
+                );
+                console.log(`${rule.generated.heading}`);
                 console.log('');
-            }
 
-            if (Array.isArray(rule.config) && rule.config.length > 1) {
-                console.log('### Current options');
-                rule.config.slice(1).forEach(function printOpt(opt) {
-                    printOption(opt);
-                });
-            }
+                if (rule.generated.options && rule.generated.options.length) {
+                    console.log('### Available options');
+                    rule.generated.options.forEach(o => {
+                        console.log(`* ${o}`);
+                    });
+                    console.log('');
+                }
 
-            console.log('');
-        });
-});
+                if (Array.isArray(rule.config) && rule.config.length > 1) {
+                    console.log('### Current options');
+                    rule.config.slice(1).forEach(function printOpt(opt) {
+                        printOption(opt);
+                    });
+                }
+
+                console.log('');
+            });
+    }
+);
