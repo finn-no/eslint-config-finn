@@ -7,14 +7,7 @@
     "docs": "node bin/generate-rule-docs.js packages/eslint-config-finn/index.js > rules.md",
     "eslint-find-rules": "cd packages/eslint-config-finn && npm run eslint-find-rules",
     "preversion": "npm prune && npm test",
-    "postinstall": "npm run install:config && npm run install:config-react && npm run install:config-prettier",
-    "install:config": "cd packages/eslint-config-finn && yarn",
-    "install:config-react": "cd packages/eslint-config-finn-react && yarn",
-    "install:config-prettier": "cd packages/eslint-config-finn-prettier && yarn",
-    "test": "eslint . && node test/config-test.js && npm run test:finn && npm run test:finn-react && npm run test:finn-prettier",
-    "test:finn": "cd packages/eslint-config-finn && npm test",
-    "test:finn-react": "cd packages/eslint-config-finn-react && npm test",
-    "test:finn-prettier": "cd packages/eslint-config-finn-prettier && npm test"
+    "test": "eslint . && node test/config-test.js"
   },
   "keywords": [
     "coding-standard",
@@ -29,13 +22,15 @@
     "url": "https://github.com/finn-no/eslint-config-finn/issues"
   },
   "devDependencies": {
-    "async": "^2.0.1",
-    "eslint": "^4.1.1",
-    "eslint-config-prettier": "^2.2.0",
+    "async": "^2.5.0",
+    "eslint": "^4.6.1",
     "eslint-find-rules": "^3.1.1",
-    "eslint-plugin-prettier": "^2.1.2",
+    "lerna": "^2.1.2",
     "marked": "^0.3.6",
-    "prettier": "^1.4.4"
+    "prettier": "^1.6.1"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ]
 }

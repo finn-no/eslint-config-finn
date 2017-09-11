@@ -31,8 +31,6 @@ If you use React, install `eslint-config-finn-react` as well.
 ## Publishing
 
 ```bash
-# Go into the package you want to publish a new version of
-$ npm version <patch | minor | major>
-$ git push --follow-tags origin master
-$ npm publish
+$ git pull
+$ yarn lerna publish
 ```
