@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-    extends: ['eslint-config-schibsted'].map(require.resolve),
+    extends: ['eslint:recommended', require.resolve('eslint-config-schibsted')],
 
     rules: {
         'array-bracket-spacing': 'error',
@@ -30,13 +30,11 @@ module.exports = {
         'no-cond-assign': ['error', 'always'],
         'no-confusing-arrow': ['error', { allowParens: true }],
         'no-console': 'error',
-        'no-debugger': 'error',
         'no-duplicate-imports': 'error',
         'no-else-return': 'off',
         'no-eq-null': 'off',
         'no-multi-spaces': 'error',
         'no-negated-condition': 'error',
-        'no-negated-in-lhs': 'error',
         'no-shadow': ['error', { allow: ['resolve', 'reject', 'cb', 'err'] }],
         'no-shadow-restricted-names': 'error',
         'no-spaced-func': 'error',
