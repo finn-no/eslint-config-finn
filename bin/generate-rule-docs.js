@@ -126,7 +126,9 @@ asyncMap(
             .map(relevantRuleDoc)
             .forEach(rule => {
                 console.log(
-                    `## [${rule.name}](http://eslint.org/docs/rules/${rule.name})`
+                    `## [${rule.name}](http://eslint.org/docs/rules/${
+                        rule.name
+                    })`
                 );
                 console.log(`${rule.generated.heading}`);
                 console.log('');

@@ -24,8 +24,8 @@
     "url": "https://github.com/finn-no/eslint-config-finn/issues"
   },
   "devDependencies": {
-    "eslint": "^4.1.1",
-    "eslint-plugin-react": "^7.1.0"
+    "eslint": "^5.4.0",
+    "eslint-plugin-react": "^7.11.1"
   },
   "dependencies": {
     "eslint-config-schibsted-react": "^4.0.1"

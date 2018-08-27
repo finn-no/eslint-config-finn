@@ -25,14 +25,14 @@
     "url": "https://github.com/finn-no/eslint-config-finn/issues"
   },
   "peerDependencies": {
-    "eslint": "^4.1.1"
+    "eslint": "^4.1.1 || ^5.0.0"
   },
   "devDependencies": {
-    "eslint": "^4.1.1"
+    "eslint": "^5.4.0"
   },
   "dependencies": {
-    "eslint-config-prettier": "^2.4.0",
-    "eslint-plugin-prettier": "^2.2.0"
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-prettier": "^2.6.2"
   },
   "license": "MIT"
 }

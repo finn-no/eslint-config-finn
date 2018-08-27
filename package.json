@@ -23,11 +23,11 @@
   },
   "devDependencies": {
     "async": "^2.5.0",
-    "eslint": "^4.6.1",
+    "eslint": "^5.4.0",
     "eslint-find-rules": "^3.1.1",
     "lerna": "^2.1.2",
     "marked": "^0.3.6",
-    "prettier": "^1.6.1"
+    "prettier": "^1.14.2"
   },
   "license": "MIT",
   "workspaces": [
