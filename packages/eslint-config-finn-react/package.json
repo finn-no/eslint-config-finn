@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-finn-react",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "ESLint config for FINN.no's React projects",
   "files": [
     "index.js",
