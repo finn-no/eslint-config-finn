@@ -6,7 +6,6 @@
   "scripts": {
     "docs": "node bin/generate-rule-docs.js packages/eslint-config-finn/index.js > rules.md",
     "eslint-find-rules": "cd packages/eslint-config-finn && npm run eslint-find-rules",
-    "preversion": "npm prune && npm test",
     "test": "eslint . && node test/config-test.js"
   },
   "keywords": [
