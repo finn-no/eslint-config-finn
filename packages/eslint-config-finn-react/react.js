@@ -4,7 +4,7 @@ module.exports = {
     extends: ['eslint-config-schibsted-react'],
     parserOptions: {
         ecmaFeatures: {
-            experimentalObjectRestSpread: true,
+            jsx: true,
         },
     },
     rules: {
