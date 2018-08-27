@@ -3,6 +3,10 @@
 module.exports = {
     extends: ['eslint:recommended', require.resolve('eslint-config-schibsted')],
 
+    parserOptions: {
+        ecmaVersion: 2018,
+    },
+
     rules: {
         'array-bracket-spacing': 'error',
         'array-callback-return': 'error',
